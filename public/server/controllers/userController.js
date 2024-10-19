@@ -1,4 +1,5 @@
 const UserModel = require('../models/User');
+const AuthorModel = require('../models/Author');
 
 const getUsers = (req,res)=>{
     UserModel.find()
@@ -19,4 +20,23 @@ const createUsers = (req,res) => {
      });
 };
 
-module.exports = {getUsers, createUsers};
+const getAuthors = (req,res)=>{
+    AuthorModel.find()
+    .then(authors => res.json(authors))
+    .catch(err =>{
+        console.log(err)
+          res.status(500).json({error:"Internal Server Error"})
+    });
+};
+
+const createAuthors = (req,res) => {
+    const newAuthor = new AuthorModel(req.body);
+    newAuthor.save()
+     .then(author => res.json(author))
+     .catch(err => {
+        console.error(err);
+        res.status(500).json({error:"Internal Server Error"});
+     });
+};
+
+module.exports = {getUsers, createUsers, getAuthors, createAuthors};
