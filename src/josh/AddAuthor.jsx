@@ -35,9 +35,7 @@ const Author = () =>{
 
     return(
         <>
-        <h1>TEST</h1>
-        <NavLink to="/josh">CLICK ME FOR ADD BOOK PAGE</NavLink>
-        <h2>Add Author</h2>
+        <h1>Add Author</h1>
         <input
             type="text"
             placeholder="Author Name"

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 //add books table
-const UserSchema = new mongoose.Schema({
+const BooksSchema = new mongoose.Schema({
     booktitle: String,
     bookdesc: String,
     bookcover: String,
@@ -12,6 +12,6 @@ const UserSchema = new mongoose.Schema({
     isbn: Number
 });
 
-const UserModel = mongoose.model("tableones", UserSchema);
+const BooksModel = mongoose.model("books", BooksSchema);
 
-module.exports = UserModel;
+module.exports = BooksModel;

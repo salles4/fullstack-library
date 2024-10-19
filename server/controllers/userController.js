@@ -1,8 +1,8 @@
-const UserModel = require('../models/User');
+const BooksModel = require('../models/Books');
 const AuthorModel = require('../models/Author');
 
-const getUsers = (req,res)=>{
-    UserModel.find()
+const getBooks = (req,res)=>{
+    BooksModel.find()
     .then(users => res.json(users))
     .catch(err =>{
         console.log(err)
@@ -10,8 +10,8 @@ const getUsers = (req,res)=>{
     });
 };
 
-const createUsers = (req,res) => {
-    const newUser = new UserModel(req.body);
+const createBooks = (req,res) => {
+    const newUser = new BooksModel(req.body);
     newUser.save()
      .then(user => res.json(user))
      .catch(err => {
@@ -39,4 +39,4 @@ const createAuthors = (req,res) => {
      });
 };
 
-module.exports = {getUsers, createUsers, getAuthors, createAuthors};
+module.exports = { getBooks, createBooks, getAuthors, createAuthors};
