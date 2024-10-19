@@ -8,4 +8,7 @@ router.post('/createBooks', userController.createBooks);
 router.get('/getAuthors', userController.getAuthors);
 router.post('/createAuthors', userController.createAuthors);
 
+router.get('/getUsers', userController.getUsers);
+router.post('/createUser', userController.createUser);
+
 module.exports = router;

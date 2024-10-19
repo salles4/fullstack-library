@@ -4,6 +4,8 @@ import Stephanie from "./steph/Stephanie";
 import AddBook from "./josh/AddBook";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
+import UserLogin from "./jerome/UserLogin";
+import UserRegister from "./jerome/UserRegister";
 
 
 function App() {
@@ -23,6 +25,9 @@ function App() {
         <NavLink to="/josh/addBook">Add Book</NavLink>
         <NavLink to="/josh/AddAuthor">Add Author</NavLink>
 
+        <NavLink to="/jerome/userlogin">Login</NavLink>
+        <NavLink to="/jerome/userregister">Register</NavLink>
+
 
       </div>
       <hr />
@@ -36,12 +41,17 @@ function App() {
         <Route path="/josh/addBook" element={<AddBook />} />
         <Route path="/josh/AddAuthor" element={<Author />} />
 
+        <Route path="/jerome/userlogin" element={<UserLogin />} />
+        <Route path="/jerome/userregister" element={<UserRegister />} />
+
 
         <Route path="/" element={<>Home</>} />
         <Route path="/books" element={<>books</>} />
         <Route path="/authors" element={<>authors</>} />
         <Route path="/category" element={<>category</>} />
         <Route path="/book/:id" element={<>book</>} />
+
+
       </Routes>
 
       <footer></footer>

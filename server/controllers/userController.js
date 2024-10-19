@@ -1,6 +1,10 @@
 const BooksModel = require('../models/Books');
 const AuthorModel = require('../models/Author');
+const UserModel = require('../models/User');
 
+
+
+// -------------- FOR BOOKS
 const getBooks = (req,res)=>{
     BooksModel.find()
     .then(users => res.json(users))
@@ -39,4 +43,28 @@ const createAuthors = (req,res) => {
      });
 };
 
-module.exports = { getBooks, createBooks, getAuthors, createAuthors};
+
+
+
+// -------------- FOR USERS
+const getUsers = (req, res) => {
+    UserModel.find()
+    .then(users => res.json(users))
+    .catch(err => {
+        console.log(err)
+        res.status(500).json({error:"Interval Server Error"})
+    })
+}
+
+
+const createUser = (req, res) => {
+    const newUser = new UserModel(req.body);
+    newUser.save()
+    .then(user => res.json(user))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({error: "Internal Server Error"})
+    })
+}
+
+module.exports = { getBooks, createBooks, getAuthors, createAuthors, getUsers, createUser };
