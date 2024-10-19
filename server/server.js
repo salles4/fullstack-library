@@ -11,5 +11,5 @@ mongoose.connect("mongodb://localhost:27017/Library")
 app.use('/api', userRoutes);
 
 app.listen(8000, () =>{
-    console.log("Server is up and running!")
+    console.log("Server is up and running! at http://localhost:8000")
 })
