@@ -3,6 +3,8 @@ import Francis from "./cis/Francis";
 import Stephanie from "./steph/Stephanie";
 import Joshua from "./josh/Joshua";
 import Jerome from "./jerome/Jerome";
+import Author from "./josh/AddAuthor";
+
 
 function App() {
 
@@ -19,6 +21,7 @@ function App() {
         {/* To be removed */}
         <Route path="/steph" element={<Stephanie />} />
         <Route path="/josh" element={<Joshua />} />
+        <Route path="/josh/AddAuthor" element={<Author />} />
         <Route path="/jerome" element={<Jerome />} />
         <Route path="/cis" element={<Francis />} />
         {/*               */}

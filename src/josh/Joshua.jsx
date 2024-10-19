@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 
 const Joshua = () => {
@@ -40,7 +41,8 @@ const Joshua = () => {
 
   return( 
     <>
-    <h2>Add Book</h2>
+    <NavLink to="/josh/AddAuthor">CLICK ME FOR ADD AUTHOR PAGE</NavLink>
+    <h2>Add Book Page</h2>
     <input
       type="text"
       placeholder="Book Title"
@@ -97,7 +99,7 @@ const Joshua = () => {
       required
       onChange={(e) => setNewUser({...newUser, isbn: e.target.value})}
     />
-    <button onClick={handleCreateUser}>ADD Book</button>
+    <button onClick={handleCreateUser}>ADD BOOK BTN</button>
 
 
     <h1>User List</h1>
