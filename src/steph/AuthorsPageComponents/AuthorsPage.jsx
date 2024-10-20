@@ -8,9 +8,8 @@ const BooksPage = () => {
     <>
      <nav><Navbar/></nav>
      <main>
-        <section className='min-h-screen w-full relative' >
-            
-            <div className='bg-gray-100 min-h-[600px] w-full rounded-b-[100px]' >
+        <section >
+            <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px]' >
             <div>
                 <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-10' >
 
