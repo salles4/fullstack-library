@@ -146,3 +146,23 @@ h2{
   @apply text-xl font-semibold
 }
 
+
+/* //for books slider css */
+.slick-slide>div{
+  margin: 0 5px;
+}
+.slick-slide{
+  background-color: white;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: brown; 
+  font-size: 30px;
+
+}
+.slick-arrow {
+z-index: 1;
+width: 40px;
+height: 40px;
+}
+

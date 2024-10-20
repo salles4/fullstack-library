@@ -5,7 +5,22 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    //overall default layout
+    extend: {
+      fontFamily: {
+        sans:["Poppins", "sans-serif"]
+      },
+      container:{
+        color:{
+          lightOrange: "#f1dabf",
+        },
+        center: true,
+        padding:{
+          default: "1rem",
+          sm:"2rem",
+        }
+      }
+    },
   },
   plugins: [],
 }
