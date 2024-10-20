@@ -1,6 +1,12 @@
 import { NavLink, Route, Routes } from "react-router-dom"
 import Francis from "./cis/Francis";
-import Stephanie from "./steph/Stephanie";
+// import Stephanie from "./steph/Stephanie";
+
+import HomePage from './steph/HomePageComponents/HomePage/HomePage'
+import BooksPage from './steph/BooksPageComponents/BooksPage'
+import AuthorsPage from './steph/AuthorsPageComponents/AuthorsPage'
+
+
 import Joshua from "./josh/Joshua";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
@@ -19,7 +25,13 @@ function App() {
       
       <Routes>
         {/* To be removed */}
-        <Route path="/steph" element={<Stephanie />} />
+
+        {/* Changes for steph routes */}
+        <Route path="/home/Page" element={<HomePage />} />
+        <Route path="/books/Page" element={<BooksPage />} />
+        <Route path="/author/Page" element={<AuthorsPage />} />
+
+
         <Route path="/josh" element={<Joshua />} />
         <Route path="/josh/AddAuthor" element={<Author />} />
         <Route path="/jerome" element={<Jerome />} />
