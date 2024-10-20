@@ -35,7 +35,7 @@ const Author = () =>{
 
     return(
         <>
-        <h1 className='addauthortitle'>Add Author</h1>
+        <h1 className='addauthortitle'>ADD AUTHOR</h1>
         <label>Author Name</label>
         <input
             type="text"
@@ -70,7 +70,7 @@ const Author = () =>{
         />
         <button className='addauthorbtn' onClick={handleCreateAuthor}>Add Author</button>
         
-        <h1 className='authorlisttitle'>Author List</h1>
+        <h1 className='authorlisttitle'>AUTHOR LIST</h1>
             <ul>
                 {authors.map(author => (
                     <li key={author._id}>{author.name} {author.bio} {author.link} <img src={author.picture}></img>
