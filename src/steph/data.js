@@ -16,6 +16,32 @@ export const responsive = {
       
     },
   };
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    responsive: [
+      {
+        breakpoint: 3000, // For Bigger desktop
+          settings: {
+              slidesToShow: 4,
+          },
+        },
+        {
+          breakpoint: 1024, // For table
+          settings: {
+              slidesToShow: 2,
+          },
+      },
+      {
+          breakpoint: 800, // For mobile
+          settings: {
+              slidesToShow: 1,
+          },
+      },
+  ],
+};
   
 
   export const data = [

@@ -3,9 +3,9 @@ import React from 'react';
 
 const AboutUsSection = () => {
   return(
-    <div className='bg-gray-100 min-h-[400px] w-full rounded-b-[150px]' >
-      <div className='container'>
-        <div className='grid grid-cols-1 sm:grid-cols-2 gap-5' >
+    <div className='bg-gray-100 min-h-[420px] w-full rounded-b-[150px] ' >
+      <div >
+        <div className=' container grid grid-cols-1 md:grid-cols-2 gap-10 p-10' >
           {/* Info (Left Column) */}
           <div >
             <h1 className='text-3xl font-bold m-3 pt-10'> About <span className=' text-amber-950' > Us </span> </h1>
@@ -32,12 +32,9 @@ const AboutUsSection = () => {
         
          {/* Image Section (Right Column) */}
          <div className='p-5 mt-5'>
-          <div className="flex justify-center border-2 min-w-[300px] min-h-[300px]">
-              <img
-                src="/path/to/your/image.jpg"
-                alt="About Us"
-                className="w-full h-auto object-cover rounded-lg shadow-lg "
-              />
+            <div className="flex justify-center border-2 min-w-[300px] min-h-[400px] ">
+              <img src="/path/to/your/image.jpg" alt="About Us"
+                className="w-full h-auto object-cover rounded-lg shadow-lg "/>
             </div>
           </div>
         </div>

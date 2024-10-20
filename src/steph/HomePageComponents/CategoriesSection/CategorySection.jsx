@@ -1,13 +1,35 @@
-import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Categories from './Categories';
 import { data, responsive } from '../../data';
 
 
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+
+
 const CategorySection = () => {
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const fetchBooks = () => {
+    axios
+      .get("http://localhost:8000/api/getBooks")
+      .then((response) => {
+        console.log(response.data);
+        setBooks(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
     // Holder for props - Categories
-    const categoryy = data.map((item)=> (
+    const categoryy = books.map((item)=> (
       <Categories 
         name={item.name} 
         img={item.img}

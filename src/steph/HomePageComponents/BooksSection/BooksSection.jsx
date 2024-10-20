@@ -1,9 +1,12 @@
-import React from 'react'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+
+
 import Books from './Books';
-import { data, responsive } from '../../data';
+import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+
 
 
 // For Card Slider
@@ -13,6 +16,25 @@ import { data, responsive } from '../../data';
 
 
 const BooksSection = () => {
+
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
+
+  const fetchBooks = () => {
+    axios
+      .get("http://localhost:8000/api/getBooks")
+      .then((response) => {
+        console.log(response.data);
+        setBooks(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -39,14 +61,14 @@ const BooksSection = () => {
   ],
 };
   
-  const books = data.map((item)=> (
+  const bookss = books.map((item)=> (
     // Holder for props - Books
     <Books 
       key={item.id}
-      name={item.name} 
-      img={item.img}
-      // category={item.category} para overview lang lalabas
-      description={item.description} /> ));
+      name={item.booktitle} 
+      img={item.bookcover}
+      // others details sa overview lang lalabas
+      description={item.bookdesc} /> ));
       
   return (
     <div className='min-h-[300px]'>
@@ -56,7 +78,7 @@ const BooksSection = () => {
           <h1>Books</h1>
         </div>
         {/* Card Slider */}
-        <Slider {...settings}>{books}</Slider>
+        <Slider {...settings}>{bookss}</Slider>
       </div>
     </div>
   );

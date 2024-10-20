@@ -13,6 +13,9 @@ import UserLogin from "./jerome/UserLogin";
 import UserRegister from "./jerome/UserRegister";
 
 
+import AboutPage from "./steph/AboutPageComponents/AboutPage";
+
+
 function App() {
 
   return (
@@ -37,6 +40,11 @@ function App() {
         <NavLink to="/books">Books</NavLink>
         <NavLink to="/author">Author</NavLink>
 
+        {/* New  */}
+        <NavLink to="/about">About</NavLink>
+
+
+
       </div>
       <hr />
 
@@ -55,6 +63,11 @@ function App() {
         <Route path="/books" element={<BooksPage />} />
         <Route path="/author" element={<AuthorsPage />} />
 
+        {/* New  */}
+        <Route path="/about" element={<AboutPage />} />
+
+
+        
 
 
       </Routes>
