@@ -16,17 +16,18 @@ const bgImage ={
 const Home =()=>{
     return   (
         <main>
-            
             {/* First Section */}
-            <section style={bgImage} className="min-h-[900px] w-full">
+            {/* Bg */}
+            <section style={bgImage} className="min-h-screen w-full relative">
                 <div  className="container">
                     {/* NavBar section */}
                    <Navbar/> 
-                    {/* Bg */}
-                    <div className="grid ">
                     {/* text content section */}
-                        <div className="text-lime-50 mt-[500px]" >
-                            <h1 className="text-7xl font-bold">Shelf <span className="text-red-800" >Wise</span></h1>
+                    <div className="flex items-center justify-start min-h-[80vh]"> 
+                        <div className="text-lime-50 text-center">
+                            <h1 className="text-7xl font-bold">
+                                Shelf <span className="text-red-800">Wise</span>
+                            </h1>
                         </div>
                     </div>
                 </div>

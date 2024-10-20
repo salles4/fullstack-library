@@ -9,7 +9,7 @@ const BooksPage = () => {
      <nav><Navbar/></nav>
      <main>
         <section >
-            <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] mt-[40px]' >
+            <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] relative' >
             <div>
                 <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-10' >
 

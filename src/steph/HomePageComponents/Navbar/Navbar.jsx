@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Navbar = () => {
-  return <nav className='absolute top-0 left-0 w-full pt-5 pb-5
+  return <nav className='absolute top-0 left-0 w-full p-6
   text-white z-20 bg-red-950' >
     <div className='container '>
       <div className='flex justify-between items-center'>

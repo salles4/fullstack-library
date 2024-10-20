@@ -8,6 +8,8 @@ export default function Authors(props){
         <img className='product--image'
           src= {props.img} alt='Book'/>         
         <p className='text-xl font-semibold'>{props.name}</p>
+        <p>{props.description}</p>
+
     </div>
   );
 }
