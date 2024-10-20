@@ -69,7 +69,8 @@ const Author = () =>{
         <h1>Author List</h1>
             <ul>
                 {authors.map(author => (
-                    <li key={author._id}>{author.name} {author.bio} {author.link} {author.picture}</li>
+                    <li key={author._id}>{author.name} {author.bio} {author.link} <img src={author.picture}></img>
+                    </li> 
                 ))}
             </ul>
         

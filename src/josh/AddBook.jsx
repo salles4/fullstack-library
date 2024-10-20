@@ -99,14 +99,14 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, isbn: e.target.value})}
     />
-    <button onClick={handleCreateBook}>ADD BOOK BTN</button>
+    <button onClick={handleCreateBook}>Add Book</button>
 
 
     <h1>Books List</h1>
       <ul>
         {books.map(book => (
           
-          <li key={book._id}>{book.booktitle} {book.bookdesc} {book.bookcover} {book.category} {book.author} {book.publisher} {book.shelfno} {book.isbn}</li>
+          <li key={book._id}>{book.booktitle} {book.bookdesc} <img src={book.bookcover}></img> {book.category} {book.author} {book.publisher} {book.shelfno} {book.isbn}</li>
         ))}
       </ul>
     </>
