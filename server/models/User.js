@@ -1,17 +1,13 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-//add books table
 const UserSchema = new mongoose.Schema({
-    booktitle: String,
-    bookdesc: String,
-    bookcover: String,
-    category: String,
-    author: String,
-    publisher: String,
-    shelfno: Number,
-    isbn: Number
-});
+    firstName: String,
+    lastName: String,
+    username: String,
+    email: String,
+    password: String
+})
 
-const UserModel = mongoose.model("tableones", UserSchema);
+const UserModel = mongoose.model("users", UserSchema);
 
 module.exports = UserModel;

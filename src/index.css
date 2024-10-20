@@ -2,6 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face{
+  font-family: GothamRoundedBook;
+  src: url("../public/fonts/GothamRoundedBook.ttf");
+}
+
+@font-face{
+  font-family: GothamRoundedBold;
+  src: url("../public/fonts/GothamRoundedBold.ttf");
+}
+
+@font-face{
+  font-family: GothamRoundedMedium;
+  src: url("../public/fonts/GothamRoundedMedium.ttf");
+}
+
+@font-face{
+  font-family: GothamRoundedLight;
+  src: url("../public/fonts/GothamRoundedLight.ttf");
+}
+
+
+/* AddBook.jsx */
+.addbooktitle{
+  font-family: GothamRoundedBook;
+}
+
+/* AddBook.jsx */
+.addbookbtn{
+  font-family: GothamRoundedBook;
+}
+
+/* AddBook.jsx */
+.bookslisttitle{
+  font-family: GothamRoundedBook;
+  text-align: center; 
+}
+
+/* AddAuthor.jsx */
+.addauthortitle{
+  font-family: GothamRoundedBook;
+}
+
+/* AddAuthor.jsx */
+.addauthorbtn{
+  font-family: GothamRoundedBook;
+}
+
+/* AddAuthor.jsx */
+.authorlisttitle{
+  font-family: GothamRoundedBook;
+  text-align: center; 
+}
+
+
+
 a{
   @apply text-red-600 font-semibold;
 }
@@ -16,7 +71,7 @@ textarea{
   @apply h-fit w-fit
 }
 button{
-  @apply bg-red-500 hover:bg-red-600 rounded p-2 text-white border
+  @apply bg-red-500 hover:bg-red-600 rounded-lg p-2 text-white border
 }
 
 ul{
@@ -24,6 +79,12 @@ ul{
 }
 ol{
   @apply list-decimal list-inside
+}
+h1{
+  @apply text-3xl font-black
+}
+h2{
+  @apply text-xl font-semibold
 }
 
 
@@ -45,3 +106,4 @@ z-index: 1;
 width: 40px;
 height: 40px;
 }
+
