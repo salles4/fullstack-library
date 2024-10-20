@@ -14,7 +14,7 @@ export default function Books (propss){
         </div>
         <div className='p-5 text-center' >
             <p className='text-xl font-semibold'>{propss.name}</p>
-            <p>{propss.description}</p>
+            <p className='truncate' >{propss.description}</p>
         </div>
       </div> 
     </div>
