@@ -4,17 +4,14 @@ import axios from 'axios';
 
 const AddBook = () => {
 
-  //books, setBooks
   const [books, setBooks] = useState([]);
-  //newBook, setNewBook
+
   const [newBook, setNewBook] = useState({});
 
   useEffect(() => {
-    //fetchBooks();
     fetchBooks();
   }, []);
 
-  //fetchBooks
   const fetchBooks = () => {
     axios
       .get("http://localhost:8000/api/getBooks")
@@ -30,9 +27,7 @@ const AddBook = () => {
   const handleCreateBook = () => {
     axios.post("http://localhost:8000/api/createBooks", newBook)
      .then(() => {
-      //fetchBooks;
       fetchBooks();
-      //setNewBook
       setNewBook({ booktitle: '', bookdesc: '', bookcover: '', category: '', author: '', publisher: '', shelfno: '', isbn: '' })
      })
      .catch((error) =>{
@@ -42,7 +37,8 @@ const AddBook = () => {
 
   return( 
     <>
-    <h1>Add Book Page</h1>
+    <h1 className='addbooktitle'>ADD BOOK PAGE</h1>
+    <label>Boot Title</label>
     <input
       type="text"
       placeholder="Book Title"
@@ -50,6 +46,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, booktitle: e.target.value})}
     />
+    <label>Book Description</label>
     <textarea
       type="text"
       placeholder="Book Description"
@@ -57,6 +54,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, bookdesc: e.target.value})}
     />
+    <label>Book Cover</label>
     <input
       type="text"
       placeholder="Book Cover"
@@ -64,6 +62,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, bookcover: e.target.value})}
     />
+    <label>Category</label>
     <input
       type="text"
       placeholder="Category"
@@ -71,6 +70,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, category: e.target.value})}
     />
+    <label>Author</label>
     <input
       type="text"
       placeholder="Author"
@@ -78,6 +78,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, author: e.target.value})}
     />
+    <label>Publisher</label>
     <input
       type="text"
       placeholder="Publisher"
@@ -85,6 +86,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, publisher: e.target.value})}
     />
+    <label>Shelf No.</label>
     <input
       type="number"
       placeholder="Shelf No."
@@ -92,6 +94,7 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, shelfno: e.target.value})}
     />
+    <label>ISBN</label>
     <input
       type="number"
       placeholder="ISBN"
@@ -99,10 +102,10 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, isbn: e.target.value})}
     />
-    <button onClick={handleCreateBook}>Add Book</button>
+    <button className="addbookbtn" onClick={handleCreateBook}>ADD BOOK</button>
 
 
-    <h1>Books List</h1>
+    <h1 className='bookslisttitle'>BOOKS LIST</h1>
       <ul>
         {books.map(book => (
           

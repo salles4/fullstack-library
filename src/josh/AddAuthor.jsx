@@ -35,7 +35,8 @@ const Author = () =>{
 
     return(
         <>
-        <h1>Add Author</h1>
+        <h1 className='addauthortitle'>Add Author</h1>
+        <label>Author Name</label>
         <input
             type="text"
             placeholder="Author Name"
@@ -43,6 +44,7 @@ const Author = () =>{
             required
             onChange={(e)=> setNewAuthor({...newAuthor, name: e.target.value})}
         />
+        <label>Author Bio</label>
         <textarea
             type="text"
             placeholder="Author Bio"
@@ -50,6 +52,7 @@ const Author = () =>{
             required
             onChange={(e)=> setNewAuthor({...newAuthor, bio: e.target.value})}
         />
+        <label>Author Link</label>
         <input
             type="text"
             placeholder="Author Link"
@@ -57,6 +60,7 @@ const Author = () =>{
             required
             onChange={(e)=> setNewAuthor({...newAuthor, link: e.target.value})}
         />
+        <label>Author Picture</label>
         <input
             type="text"
             placeholder="Author Picture"
@@ -64,9 +68,9 @@ const Author = () =>{
             required
             onChange={(e)=> setNewAuthor({...newAuthor, picture: e.target.value})}
         />
-        <button onClick={handleCreateAuthor}>Add Author</button>
+        <button className='addauthorbtn' onClick={handleCreateAuthor}>Add Author</button>
         
-        <h1>Author List</h1>
+        <h1 className='authorlisttitle'>Author List</h1>
             <ul>
                 {authors.map(author => (
                     <li key={author._id}>{author.name} {author.bio} {author.link} <img src={author.picture}></img>
