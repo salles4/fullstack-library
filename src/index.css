@@ -22,39 +22,98 @@
   src: url("../public/fonts/GothamRoundedLight.ttf");
 }
 
-
-/* AddBook.jsx */
+/* --------------- CSS FOR ADD BOOK PAGE STARTS HERE -------------- */
 .addbooktitle{
+  margin-top: 50px;
   font-family: GothamRoundedBook;
+  text-align: center;
 }
 
-/* AddBook.jsx */
 .addbookbtn{
   font-family: GothamRoundedBook;
+  width: 115px;
 }
 
-/* AddBook.jsx */
+.resetbtn{
+  font-family: GothamRoundedBook;
+  width: 115px;
+}
+
+.cancelbtn{
+  font-family: GothamRoundedBook;
+  width: 115px;
+}
+
 .bookslisttitle{
   font-family: GothamRoundedBook;
   text-align: center; 
 }
 
-/* AddAuthor.jsx */
 .addauthortitle{
   font-family: GothamRoundedBook;
 }
 
-/* AddAuthor.jsx */
 .addauthorbtn{
   font-family: GothamRoundedBook;
 }
 
-/* AddAuthor.jsx */
 .authorlisttitle{
   font-family: GothamRoundedBook;
   text-align: center; 
 }
 
+.textareabookdesc{
+  width : 98.5%;
+  height: 181px;
+}
+
+.ctn{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.addbookctn1{
+  margin-top: 100px;
+  margin-right: 10px;
+  /* background-color: pink; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.addbookctn2{
+  margin-top: 100px;
+  margin-left: 10px;
+  /* background-color: salmon; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.btnctn{
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: pink; */
+  margin-left: 379px;
+  margin-top: 60px;
+}
+
+@media screen and (max-width:800px){
+  .ctn{
+    align-items: center;
+    flex-direction: column;
+  }
+  .addbookctn1, .addbookctn2{
+    margin-top: 20px;
+    width: 90%;
+  }
+}
+/* --------------- CSS FOR ADD BOOK PAGE ENDS HERE -------------- */
 
 
 a{

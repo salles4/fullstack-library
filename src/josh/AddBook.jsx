@@ -5,7 +5,6 @@ import axios from 'axios';
 const AddBook = () => {
 
   const [books, setBooks] = useState([]);
-
   const [newBook, setNewBook] = useState({});
 
   useEffect(() => {
@@ -38,8 +37,13 @@ const AddBook = () => {
   return( 
     <>
     <h1 className='addbooktitle'>ADD BOOK PAGE</h1>
-    <label>Boot Title</label>
+
+    <div className='ctn'>
+
+    <div className='addbookctn1'>
+    <label>Book Title</label>
     <input
+      className='inputbooktitle'
       type="text"
       placeholder="Book Title"
       value={newBook.booktitle}
@@ -48,6 +52,7 @@ const AddBook = () => {
     />
     <label>Book Description</label>
     <textarea
+      className='textareabookdesc'
       type="text"
       placeholder="Book Description"
       value={newBook.bookdesc}
@@ -62,14 +67,22 @@ const AddBook = () => {
       required
       onChange={(e) => setNewBook({...newBook, bookcover: e.target.value})}
     />
+    </div>
+
+    <div className='addbookctn2'>
     <label>Category</label>
-    <input
-      type="text"
-      placeholder="Category"
-      value={newBook.category}
-      required
-      onChange={(e) => setNewBook({...newBook, category: e.target.value})}
-    />
+    <select value={newBook.category} onChange={(e) => setNewBook({...newBook, category: e.target.value})}>
+      <option>GENERAL KNOWLEDGE</option>
+      <option>PHILOSOPHY & PSYCHOLOGY</option>
+      <option>RELIGION</option>
+      <option>SOCIAL SCIENCES</option>
+      <option>LANGUAGES</option>
+      <option>SCIENCE</option>
+      <option>TECHNOLOGY</option>
+      <option>ARTS & RECREATION</option>
+      <option>LITERATURE</option>
+      <option>HISTORY & GEOGRAPHY</option>
+    </select>
     <label>Author</label>
     <input
       type="text"
@@ -89,6 +102,7 @@ const AddBook = () => {
     <label>Shelf No.</label>
     <input
       type="number"
+      min="0"
       placeholder="Shelf No."
       value={newBook.shelfno}
       required
@@ -97,13 +111,21 @@ const AddBook = () => {
     <label>ISBN</label>
     <input
       type="number"
+      min="0"
+      maxLength={13}
       placeholder="ISBN"
       value={newBook.isbn}
       required
       onChange={(e) => setNewBook({...newBook, isbn: e.target.value})}
     />
+    </div>
+    </div>
+    
+    <div className='btnctn'>
     <button className="addbookbtn" onClick={handleCreateBook}>ADD BOOK</button>
-
+    <button className="resetbtn">RESET</button>
+    <button className="cancelbtn">CANCEL</button>
+    </div>
 
     <h1 className='bookslisttitle'>BOOKS LIST</h1>
       <ul>
