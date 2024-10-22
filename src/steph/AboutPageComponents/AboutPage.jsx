@@ -17,8 +17,8 @@ const AboutPage = () => {
         <section style={bgImage} className="w-full relative py-10">
           <div className="container mx-auto flex flex-col lg:flex-row items-center">
             {/* Left Column (Image Section) */}
-            <div className="flex justify-center lg:w-1/2">
-              <div className="border-2 min-w-[300px] min-h-[400px]">
+            <div className="flex justify-center lg:w-1/2 ">
+              <div className="border-2 w-full max-w-lg-auto">
                 <img
                   src={bgImagee}
                   alt="Featured Book"
