@@ -31,8 +31,9 @@ const CategorySection = () => {
     // Holder for props - Categories
     const categoryy = books.map((item)=> (
       <Categories 
-        name={item.name} 
-        img={item.img}
+        key={item.id}
+        name={item.booktitle} 
+        img={item.bookcover}
         category={item.category} /> ));
       
     return (
