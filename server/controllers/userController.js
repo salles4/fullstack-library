@@ -2,8 +2,6 @@ const BooksModel = require('../models/Books');
 const AuthorModel = require('../models/Author');
 const UserModel = require('../models/User');
 
-
-
 // -------------- FOR BOOKS
 const getBooks = (req,res)=>{
     BooksModel.find()
@@ -24,6 +22,7 @@ const createBooks = (req,res) => {
      });
 };
 
+// -------------- FOR AUTHORS
 const getAuthors = (req,res)=>{
     AuthorModel.find()
     .then(authors => res.json(authors))
