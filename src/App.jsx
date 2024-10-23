@@ -17,9 +17,6 @@ import AboutPage from "./steph/AboutPageComponents/AboutPage";
 import BookOverview from './steph/BookOverviewComponents/BookDetails';
 import AuthorOverview from './steph/AuthorOverviewComponents/AuthorDetails';
 
-
-
-
 function App() {
 
   return (
@@ -49,11 +46,6 @@ function App() {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/book/overview">BookOverview</NavLink>
         <NavLink to="/author/overview">AuthorOverview</NavLink>
-
-
-
-
-
       </div>
       <hr />
 
