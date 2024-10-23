@@ -115,6 +115,37 @@
 }
 /* --------------- CSS FOR ADD BOOK PAGE ENDS HERE -------------- */
 
+/* --------------- CSS FOR ALL BOOKS PAGE STARTS HERE -------------- */
+
+table, th, td{
+  margin-top: 50px;
+  border:1px solid black;
+  border-collapse: collapse;
+  font-family: GothamRoundedBook;
+  text-align: center;
+}
+
+.thtitle{
+  width: 10%;
+}
+
+.thdesc{
+  width: 30%;
+}
+
+.thcover{
+  width: 200px;
+}
+
+.bookcover{
+  width: 200px;
+  height: 300px;
+}
+
+
+
+
+/* --------------- CSS FOR ALL BOOKS PAGE ENDS HERE -------------- */
 
 a{
   @apply text-red-600 font-semibold;

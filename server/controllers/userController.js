@@ -22,6 +22,15 @@ const createBooks = (req,res) => {
      });
 };
 
+const updateBooks = (req, res) => {
+    BooksModel.findByIdAndUpdate(req.params.id, req.body, {new:true})
+     .then(user => res.json(user))
+     .catch(err => {
+        console.log(err);
+        res.status(500).json({error: "Internal Server Error"});
+     });
+};
+
 // -------------- FOR AUTHORS
 const getAuthors = (req,res)=>{
     AuthorModel.find()
@@ -41,8 +50,6 @@ const createAuthors = (req,res) => {
         res.status(500).json({error:"Internal Server Error"});
      });
 };
-
-
 
 
 // -------------- FOR USERS
@@ -66,4 +73,4 @@ const createUser = (req, res) => {
     })
 }
 
-module.exports = { getBooks, createBooks, getAuthors, createAuthors, getUsers, createUser };
+module.exports = { getBooks, createBooks, updateBooks, getAuthors, createAuthors, getUsers, createUser };
