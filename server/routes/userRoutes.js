@@ -4,6 +4,7 @@ const userController = require('../controllers/userController');
 
 router.get('/getBooks', userController.getBooks);
 router.post('/createBooks', userController.createBooks);
+router.delete('/deleteBooks/:id', userController.deleteBooks);
 
 router.put('/updateBook/:id', userController.updateBooks);
 

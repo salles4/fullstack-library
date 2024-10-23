@@ -11,8 +11,7 @@ const AddBook = () => {
   }, []);
 
   const fetchBooks = () => {
-    axios
-      .get("http://localhost:8000/api/getBooks")
+    axios.get("http://localhost:8000/api/getBooks")
       .then((response) => {
         console.log(response.data);
         setBooks(response.data);
@@ -21,6 +20,16 @@ const AddBook = () => {
         console.log(error);
       });
   }
+
+  const handleDeleteBook = (id) =>{
+    axios.delete(`http://localhost:8000/api/deleteBooks/${id}`)
+     .then(()=>{
+      fetchBooks();
+     })
+     .catch((error) => {
+      console.log(error);
+     });
+  };
 
   return( 
     <>
@@ -49,30 +58,18 @@ const AddBook = () => {
                     <td key={book._id}>{book.publisher}</td>
                     <td key={book._id}>{book.shelfno}</td>
                     <td key={book._id}>{book.isbn}</td>
-                    <td><button>EDIT</button><button>DELETE</button></td>
+                    <td><button>EDIT</button><button onClick={()=> handleDeleteBook(book._id)}>DELETE</button></td>
                     </>
                 </tr>
             ))}
-            {/* <tr>
-                {books.map(book => (
-                    <>
-                    <td key={book._id}>{book.booktitle}</td>
-                    <td key={book._id}>{book.bookdesc}</td>
-                    <td key={book._id}><img className='bookcover' src={book.bookcover} alt='book cover'></img></td>
-                    <td key={book._id}>{book.category}</td>
-                    <td key={book._id}>{book.author}</td>
-                    <td key={book._id}>{book.publisher}</td>
-                    <td key={book._id}>{book.shelfno}</td>
-                    <td key={book._id}>{book.isbn}</td>
-                    </>
-                ))}
-            </tr> */}
         </table>
         {/* <ul>
             
             {books.map(book => (
             
-            <li key={book._id}>{book.booktitle} {book.bookdesc} <img className='bookcover' src={book.bookcover} alt='book cover'></img> {book.category} {book.author} {book.publisher} {book.shelfno} {book.isbn}</li>
+            <li key={book._id}>{book.booktitle} {book.bookdesc} <img className='bookcover' src={book.bookcover} alt='book cover'></img> {book.category} {book.author} {book.publisher} {book.shelfno} {book.isbn}
+            <button onClick={()=> handleDeleteBook(book._id)}>DELETE</button>
+            </li>
             ))}
         </ul> */}
     </>
