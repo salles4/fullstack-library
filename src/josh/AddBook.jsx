@@ -104,17 +104,17 @@ const AddBook = () => {
     <div className='addbookctn2'>
     
     <select value={newBook.category} onChange={(e) => setNewBook({...newBook, category: e.target.value})}>
-      <option value="">Select Category</option>
-      <option>GENERAL KNOWLEDGE</option>
-      <option>PHILOSOPHY & PSYCHOLOGY</option>
-      <option>RELIGION</option>
-      <option>SOCIAL SCIENCES</option>
-      <option>LANGUAGES</option>
-      <option>SCIENCE</option>
-      <option>TECHNOLOGY</option>
-      <option>ARTS & RECREATION</option>
-      <option>LITERATURE</option>
-      <option>HISTORY & GEOGRAPHY</option>
+      <option value="" disabled>Select Category</option>
+      <option>General Knowledge</option>
+      <option>Philosophy and Psychology</option>
+      <option>Religion</option>
+      <option>Social Sciences</option>
+      <option>Languages</option>
+      <option>Science</option>
+      <option>Technology</option>
+      <option>Arts and Recreation</option>
+      <option>Literature</option>
+      <option>History and Geography</option>
     </select>
 
 
