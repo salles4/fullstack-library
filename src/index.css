@@ -117,29 +117,32 @@
 
 /* --------------- CSS FOR ALL BOOKS PAGE STARTS HERE -------------- */
 
-table, th, td{
-  margin-top: 50px;
-  border:1px solid black;
-  border-collapse: collapse;
-  font-family: GothamRoundedBook;
-  text-align: center;
+.allBooksMainCont{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.thtitle{
-  width: 10%;
+.allBooksTable{
+  
+  width: 90%;
+  margin-left: 5%;
 }
 
-.thdesc{
-  width: 30%;
+th, td{
+  border: 2px solid black
 }
 
-.thcover{
-  width: 200px;
+td {
+  text-align: center;        
+  vertical-align: middle;    
+  padding: 10px;             
 }
 
-.bookcover{
-  width: 200px;
-  height: 300px;
+td img {
+  display: inline-block;     
+  max-width: 150px;          
+  height: auto;              
 }
 
 

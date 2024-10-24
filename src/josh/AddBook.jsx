@@ -5,7 +5,17 @@ import axios from 'axios';
 const AddBook = () => {
 
   const [books, setBooks] = useState([]); 
-  const [newBook, setNewBook] = useState({});
+  const [newBook, setNewBook] = useState({
+    booktitle: '', 
+    bookdesc: '', 
+    bookcover: '', 
+    category: '', 
+    author: '', 
+    publisher: '', 
+    shelfno: '', 
+    isbn: ''
+  });
+  
 
   useEffect(() => {
     fetchBooks();
@@ -24,15 +34,33 @@ const AddBook = () => {
   }
 
   const handleCreateBook = () => {
+
+    if(newBook.booktitle === "" || newBook.bookdesc === "" || newBook.bookcover === "" || newBook.category === "" || newBook.author === "" 
+      || newBook.publisher === "" || newBook.shelfno === "" || newBook.isbn === ""){
+        alert("Please complete all required fields!");
+      return;
+    }
+    
+    
     axios.post("http://localhost:8000/api/createBooks", newBook)
-     .then(() => {
-      fetchBooks();
-      setNewBook({ booktitle: '', bookdesc: '', bookcover: '', category: '', author: '', publisher: '', shelfno: '', isbn: '' })
-     })
-     .catch((error) =>{
-      console.log(error);
-     });
+      .then(() => {
+        fetchBooks();
+        setNewBook({
+          booktitle: '', 
+          bookdesc: '', 
+          bookcover: '', 
+          category: '', 
+          author: '', 
+          publisher: '', 
+          shelfno: '', 
+          isbn: '' 
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+  
 
   const clearEntries = () => {
     setNewBook({booktitle: '', bookdesc: '', bookcover: '', category: '', author: '', publisher: '', shelfno: '', isbn: ''})
@@ -74,8 +102,9 @@ const AddBook = () => {
     </div>
 
     <div className='addbookctn2'>
-    <label>Category</label>
+    
     <select value={newBook.category} onChange={(e) => setNewBook({...newBook, category: e.target.value})}>
+      <option value="">Select Category</option>
       <option>GENERAL KNOWLEDGE</option>
       <option>PHILOSOPHY & PSYCHOLOGY</option>
       <option>RELIGION</option>
@@ -87,6 +116,9 @@ const AddBook = () => {
       <option>LITERATURE</option>
       <option>HISTORY & GEOGRAPHY</option>
     </select>
+
+
+
     <label>Author</label>
     <input
       type="text"

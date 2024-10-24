@@ -33,9 +33,10 @@ const AddBook = () => {
 
   return( 
     <>
-    <h1 className='bookslisttitle'>BOOKS LIST</h1>
-        
-        <table>
+      <h1 className='bookslisttitle'>BOOKS LIST</h1>
+
+      <div className='allBooksMainCont'>
+        <table className='allBooksTable'>
             <tr>
                 <th className='thtitle'>Title</th>
                 <th className='thdesc'>Description</th>
@@ -48,30 +49,24 @@ const AddBook = () => {
                 <th>Action</th>
             </tr>
             {books.map(book => (
-                <tr>
+                <tr key={book._id}>
                     <>
-                    <td key={book._id}>{book.booktitle}</td>
-                    <td key={book._id}>{book.bookdesc}</td>
-                    <td key={book._id}><img className='bookcover' src={book.bookcover} alt='book cover'></img></td>
-                    <td key={book._id}>{book.category}</td>
-                    <td key={book._id}>{book.author}</td>
-                    <td key={book._id}>{book.publisher}</td>
-                    <td key={book._id}>{book.shelfno}</td>
-                    <td key={book._id}>{book.isbn}</td>
+                    <td>{book.booktitle}</td>
+                    <td>{book.bookdesc}</td>
+                    <td><img className='bookcover' src={book.bookcover} alt='book cover'></img></td>
+                    <td>{book.category}</td>
+                    <td>{book.author}</td>
+                    <td>{book.publisher}</td>
+                    <td>{book.shelfno}</td>
+                    <td>{book.isbn}</td>
                     <td><button>EDIT</button><button onClick={()=> handleDeleteBook(book._id)}>DELETE</button></td>
                     </>
                 </tr>
             ))}
         </table>
-        {/* <ul>
-            
-            {books.map(book => (
-            
-            <li key={book._id}>{book.booktitle} {book.bookdesc} <img className='bookcover' src={book.bookcover} alt='book cover'></img> {book.category} {book.author} {book.publisher} {book.shelfno} {book.isbn}
-            <button onClick={()=> handleDeleteBook(book._id)}>DELETE</button>
-            </li>
-            ))}
-        </ul> */}
+      </div>
+        
+        
     </>
   )
 }
