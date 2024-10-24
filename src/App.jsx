@@ -9,8 +9,11 @@ import AddBook from "./josh/AddBook";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
 import AllBooks from "./josh/AllBooks";
+
 import UserLogin from "./jerome/UserLogin";
 import UserRegister from "./jerome/UserRegister";
+
+import BookCategory from "./jerome/BookCategory";
 
 // new
 import AboutPage from "./steph/AboutPageComponents/AboutPage";
@@ -38,6 +41,8 @@ function App() {
         <NavLink to="/jerome/userlogin">Login</NavLink>
         <NavLink to="/jerome/userregister">Register</NavLink>
 
+        <NavLink to="/jerome/bookcategory">BookCategory</NavLink>
+
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/books">Books</NavLink>
         <NavLink to="/author">Author</NavLink>
@@ -60,6 +65,7 @@ function App() {
 
         <Route path="/jerome/userlogin" element={<UserLogin />} />
         <Route path="/jerome/userregister" element={<UserRegister />} />
+        <Route path="/jerome/bookcategory" element={<BookCategory />} />
 
         <Route path="/home" element={<HomePage />} />
         <Route path="/books" element={<BooksPage />} />

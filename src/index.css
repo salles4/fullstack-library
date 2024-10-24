@@ -150,6 +150,138 @@ td img {
 
 /* --------------- CSS FOR ALL BOOKS PAGE ENDS HERE -------------- */
 
+
+
+
+/* --------------- CSS FOR BOOKS CAROUSEL STARTS HERE -------------- */
+.carouselMainCont{
+  width: 100%;
+  height: 45vh;
+  background-color: red;
+  display: flex;
+  justify-content: space-around;
+}
+
+.carouselBookCover{
+  width: 17vw;
+  height: 40vh;
+  border-radius: 20px;
+}
+
+.coverHolder{
+  width: 30%;
+  height: 100%;
+  background-color: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.coverBtn{
+  margin-top: 20px;
+  width: 35%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bookDetails{
+  background-color: aqua;
+  width: 60%;
+  height: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.carouselBookTitle{
+  font-size: 50px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+.bookDetails h2{
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.bookDetails p{
+  font-size: 18px;
+}
+
+.carouselBookDesc{
+  padding-top: 10px;
+  text-indent: 50px;
+  text-align: justify;
+}
+
+
+/* --------------- CSS FOR BOOKS CAROUSEL ENDS HERE -------------- */
+
+
+
+
+
+
+/* --------------- CSS FOR BOOKS CATEGORY STARTS HERE -------------- */
+
+.mainCont{
+  width: 100%;
+  background-color: blueviolet;
+  margin-top: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 60px;
+  margin-top: 30px;
+}
+
+.allTitle{
+  text-align: center;
+  font-size: 40px;
+  padding-top: 30px;
+}
+
+.seeAll{
+  padding-left: 40px;
+}
+
+.imagesHolder{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.imagesHolder img {
+  width: 20vw;
+  height: 50vh;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 4); 
+}
+
+.imagesHolder img:hover {
+  transform: translateY(-20px) rotateY(30deg); 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
+}
+
+
+
+
+/* --------------- CSS FOR BOOKS CATEGORY ENDS HERE -------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a{
   @apply text-red-600 font-semibold;
 }
