@@ -16,7 +16,7 @@ export default function Authors(props){
               />
             </div>
           </div>
-          <div className='p-3 text-center overflow-hidden text-ellipsis'>
+          <div className='p-3 text-center overflow-hidden text-ellipsis h-[200px]'>
             <p className='text-xl font-semibold m-2'>{props.name}</p>
             <p className='text-sm'>{props.description}</p>
           </div>
