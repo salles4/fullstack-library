@@ -6,11 +6,10 @@ import BooksPage from './steph/BooksPageComponents/BooksPage'
 import AuthorsPage from './steph/AuthorsPageComponents/AuthorsPage'
 
 
-
-
 import AddBook from "./josh/AddBook";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
+import AllBooks from "./josh/AllBooks";
 import UserLogin from "./jerome/UserLogin";
 import UserRegister from "./jerome/UserRegister";
 
@@ -18,8 +17,8 @@ import UserRegister from "./jerome/UserRegister";
 import AboutPage from "./steph/AboutPageComponents/AboutPage";
 import BookOverview from './steph/BookOverviewComponents/BookDetails';
 import AuthorOverview from './steph/AuthorOverviewComponents/AuthorDetails';
-import ContactUs from './steph/ContactUsPageComponents/ContactUs';
 
+import ContactUs from './steph/ContactUsPageComponents/ContactUs';
 
 
 function App() {
@@ -38,6 +37,7 @@ function App() {
         {/* Dito mag-add ng links */}
         <NavLink to="/josh/addBook">Add Book</NavLink>
         <NavLink to="/josh/AddAuthor">Add Author</NavLink>
+        <NavLink to="/josh/AllBooks">All Books</NavLink>
 
         <NavLink to="/jerome/userlogin">Login</NavLink>
         <NavLink to="/jerome/userregister">Register</NavLink>
@@ -50,12 +50,8 @@ function App() {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/book/overview">BookOverview</NavLink>
         <NavLink to="/author/overview">AuthorOverview</NavLink>
+
         <NavLink to="/contacts/us">ContactUs</NavLink>
-
-
-
-
-
 
       </div>
       <hr />
@@ -67,6 +63,7 @@ function App() {
 
         <Route path="/josh/addBook" element={<AddBook />} />
         <Route path="/josh/AddAuthor" element={<Author />} />
+        <Route path="/josh/AllBooks" element={<AllBooks />} />
 
         <Route path="/jerome/userlogin" element={<UserLogin />} />
         <Route path="/jerome/userregister" element={<UserRegister />} />
@@ -79,9 +76,9 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/book/overview" element={<BookOverview />} />
         <Route path="/author/overview" element={<AuthorOverview />} />
+          
         <Route path="/contacts/us" element={<ContactUs />} />
 
-        
 
       </Routes>
 
