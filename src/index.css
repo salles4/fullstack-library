@@ -115,6 +115,40 @@
 }
 /* --------------- CSS FOR ADD BOOK PAGE ENDS HERE -------------- */
 
+/* --------------- CSS FOR ALL BOOKS PAGE STARTS HERE -------------- */
+
+.allBooksMainCont{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.allBooksTable{
+  
+  width: 90%;
+  margin-left: 5%;
+}
+
+th, td{
+  border: 2px solid black
+}
+
+td {
+  text-align: center;        
+  vertical-align: middle;    
+  padding: 10px;             
+}
+
+td img {
+  display: inline-block;     
+  max-width: 150px;          
+  height: auto;              
+}
+
+
+
+
+/* --------------- CSS FOR ALL BOOKS PAGE ENDS HERE -------------- */
 
 a{
   @apply text-red-600 font-semibold;
