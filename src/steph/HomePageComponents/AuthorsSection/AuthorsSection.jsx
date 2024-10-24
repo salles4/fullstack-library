@@ -2,6 +2,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Authors from './Authors';
 import { responsive } from '../../data';
+import { Link } from 'react-router-dom'
+
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -45,9 +47,10 @@ const AuthorsSection = () => {
     <div className='min-h-[300px] ' >
       <div className='container'>
         {/* Header */}
-        <div className='text-left font-bold text-3xl mt-10 mb-10'>
-          <h1>Authors</h1>
-        </div>
+        <div className='mt-10 mb-10 flex justify-between m-9'>
+          <h1 >Authors</h1>
+          <Link className="text-black text-lg" to={"/author"} >See All</Link>
+          </div>
         {/* nakapasok ang responsive and authors details sa data.js  */}
         <Carousel responsive={responsive}>{authorss}</Carousel>
       </div>

@@ -80,7 +80,7 @@ function App() {
 
         {/* New  */}
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/book/overview" element={<BookOverview />} />
+        <Route path="/book/overview/:id" element={<BookOverview />} />
         <Route path="/author/overview" element={<AuthorOverview />} />
           
         <Route path="/contacts/us" element={<ContactUs />} />

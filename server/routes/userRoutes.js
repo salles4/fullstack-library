@@ -18,5 +18,9 @@ router.post('/createUser', userController.createUser);
 router.get('/getContacts', userController.getContacts);
 router.post('/createContacts', userController.createContacts);
 
+router.get('/getBooks/:id', userController.getBooksByID);
+
+
+
 
 module.exports = router;
