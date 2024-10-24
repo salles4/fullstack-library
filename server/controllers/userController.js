@@ -1,6 +1,7 @@
 const BooksModel = require('../models/Books');
 const AuthorModel = require('../models/Author');
 const UserModel = require('../models/User');
+const ContactModel = require('../models/Contact');
 
 // -------------- FOR BOOKS
 const getBooks = (req,res)=>{
@@ -82,4 +83,26 @@ const createUser = (req, res) => {
     })
 }
 
-module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser };
+// -------------- FOR Contact US
+
+const createContacts = (req, res ) =>{
+    const newContact = new ContactModel(req.body);
+    newContact.save()
+    .then(contacts => res.json(contacts))
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({error: "Internal Server Error"})
+    })
+}
+
+const getContacts = (req,res)=>{
+    ContactModel.find()
+    .then(contacts => res.json(contacts))
+    .catch(err =>{
+        console.log(err)
+          res.status(500).json({error:"Internal Server Error"})
+    });
+};
+
+
+module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser, getContacts, createContacts };

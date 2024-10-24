@@ -5,6 +5,7 @@ import HomePage from './steph/HomePageComponents/HomePage/HomePage'
 import BooksPage from './steph/BooksPageComponents/BooksPage'
 import AuthorsPage from './steph/AuthorsPageComponents/AuthorsPage'
 
+
 import AddBook from "./josh/AddBook";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
@@ -16,6 +17,9 @@ import UserRegister from "./jerome/UserRegister";
 import AboutPage from "./steph/AboutPageComponents/AboutPage";
 import BookOverview from './steph/BookOverviewComponents/BookDetails';
 import AuthorOverview from './steph/AuthorOverviewComponents/AuthorDetails';
+
+import ContactUs from './steph/ContactUsPageComponents/ContactUs';
+
 
 function App() {
 
@@ -46,6 +50,9 @@ function App() {
         <NavLink to="/about">About</NavLink>
         <NavLink to="/book/overview">BookOverview</NavLink>
         <NavLink to="/author/overview">AuthorOverview</NavLink>
+
+        <NavLink to="/contacts/us">ContactUs</NavLink>
+
       </div>
       <hr />
 
@@ -69,7 +76,8 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/book/overview" element={<BookOverview />} />
         <Route path="/author/overview" element={<AuthorOverview />} />
-   
+          
+        <Route path="/contacts/us" element={<ContactUs />} />
 
 
       </Routes>
