@@ -2,6 +2,8 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Categories from './Categories';
 import { data, responsive } from '../../data';
+import { Link } from 'react-router-dom'
+
 
 
 import axios from 'axios';
@@ -40,8 +42,9 @@ const CategorySection = () => {
       <div className='min-h-[300px] ' >
         <div className='container'>
           {/* Header */}
-          <div className='text-left font-bold text-3xl mt-10 mb-10'>
-            <h1>Category</h1>
+          <div className='mt-10 mb-10 flex justify-between m-9'>
+            <h1 >Categories</h1>
+            <Link className="text-black text-lg" to={"/jerome/bookcategory"} >See All</Link>
           </div>
 
           {/* responsive style para mababago yung ddisplay sa slider */}

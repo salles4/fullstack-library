@@ -105,4 +105,14 @@ const getContacts = (req,res)=>{
 };
 
 
-module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser, getContacts, createContacts };
+const getBooksByID =(req, res ) =>{
+    BooksModel.findById(req.params.id)
+    .then(book => res.json(book))
+    .catch(err => {
+       console.log(err);
+       res.status(500).json({error: "Internal Server Error"});
+    });
+};
+
+
+module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID };

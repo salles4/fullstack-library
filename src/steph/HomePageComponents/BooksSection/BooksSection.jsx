@@ -2,9 +2,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-import { responsive } from '../../data';
-
-
 
 import Books from './Books';
 import axios from 'axios';
@@ -64,14 +61,15 @@ const BooksSection = () => {
   ],
 };
   
-  const bookss = books.map((item)=> (
-    // Holder for props - Books
+  const bookss = books.map((item) => (
     <Books 
-      key={item.id}
+      key={item._id}
+      id={item._id} 
       name={item.booktitle} 
       img={item.bookcover}
-      // others details sa overview lang lalabas
-      description={item.bookdesc} /> ));
+      description={item.bookdesc} 
+    />
+  ));
       
   return (
     <div className='min-h-[300px]'>
