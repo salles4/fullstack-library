@@ -191,6 +191,7 @@ td img {
   height: 100%;
   padding-left: 30px;
   padding-right: 30px;
+  overflow: hidden;
 }
 
 .carouselBookTitle{
@@ -238,15 +239,11 @@ td img {
   padding-top: 30px;
 }
 
-.seeAll{
-  padding-left: 40px;
-}
-
 .imagesHolder{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 .imagesHolder img {
   width: 20vw;
@@ -257,7 +254,7 @@ td img {
 }
 
 .imagesHolder img:hover {
-  transform: translateY(-20px) rotateY(30deg); 
+  transform: translateY(-40px) rotateY(30deg); 
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
 }
 

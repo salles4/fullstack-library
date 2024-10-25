@@ -1,6 +1,10 @@
-import React from 'react'
+
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const Navbar = () => {
+
+
   return <nav className='absolute top-0 left-0 w-full text-white bg-red-950' >
             <div className='container mx-auto p-5'>
               <div className='flex flex-col sm:flex-row justify-between items-center gap-4'>
@@ -21,12 +25,12 @@ const Navbar = () => {
                       </div>
 
                       <input
-                        className='h-full w-full outline-none text-sm border-none text-gray-700'
+                        className='h-full w-full outline-none text-sm border-none text-gray-700 searchbar'
                         type='text'
                         id='search'
                         placeholder='Search Books, Categories and Authors.'
                       />
-                      <button type="submit" class="text-white focus:outline-none font-medium rounded-xl text-sm px-4">Search</button>
+                      <button type="submit" className="text-white focus:outline-none font-medium rounded-xl text-sm px-4">Search</button>
                     </div>
                   </div>
                   
