@@ -11,10 +11,16 @@ import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
 import AllBooks from "./josh/AllBooks";
 
+
+//---------- Kay jerome
 import UserLogin from "./jerome/UserLogin";
 import UserRegister from "./jerome/UserRegister";
 
 import BookCategory from "./jerome/BookCategory";
+
+import SearchTry from "./jerome/SearchTry";
+
+//----------------------------------------------
 
 // new
 import AboutPage from "./steph/AboutPageComponents/AboutPage";
@@ -22,6 +28,7 @@ import BookOverview from './steph/BookOverviewComponents/BookDetails';
 import AuthorOverview from './steph/AuthorOverviewComponents/AuthorDetails';
 
 import ContactUs from './steph/ContactUsPageComponents/ContactUs';
+
 
 
 function App() {
@@ -41,11 +48,15 @@ function App() {
         <NavLink to="/josh/addBook">Add Book</NavLink>
         <NavLink to="/josh/AddAuthor">Add Author</NavLink>
         <NavLink to="/josh/AllBooks">All Books</NavLink>
-
+        
         <NavLink to="/jerome/userlogin">Login</NavLink>
         <NavLink to="/jerome/userregister">Register</NavLink>
 
         <NavLink to="/jerome/bookcategory">BookCategory</NavLink>
+
+        {/*---------------- TRIAL --------------------*/}
+          <NavLink to="/jerome/searchy">Searchy</NavLink>
+        {/*-----------------------------------------------*/}
 
         <NavLink to="/home">Home</NavLink>
         <NavLink to="/books">Books</NavLink>
@@ -70,9 +81,15 @@ function App() {
         <Route path="/josh/AddAuthor" element={<Author />} />
         <Route path="/josh/AllBooks" element={<AllBooks />} />
 
+        
+
         <Route path="/jerome/userlogin" element={<UserLogin />} />
         <Route path="/jerome/userregister" element={<UserRegister />} />
         <Route path="/jerome/bookcategory" element={<BookCategory />} />
+
+        {/*---------------- TRIAL --------------------*/}
+          <Route path="/jerome/searchy" element={<SearchTry />} />
+        {/*-----------------------------------------------*/}
 
         <Route path="/home" element={<HomePage />} />
         <Route path="/books" element={<BooksPage />} />
