@@ -6,7 +6,7 @@ router.get('/getBooks', userController.getBooks);
 router.post('/createBooks', userController.createBooks);
 router.delete('/deleteBooks/:id', userController.deleteBooks);
 
-router.put('/updateBook/:id', userController.updateBooks);
+router.put('/updateBooks/:id', userController.updateBooks);
 
 router.get('/getAuthors', userController.getAuthors);
 router.post('/createAuthors', userController.createAuthors);
