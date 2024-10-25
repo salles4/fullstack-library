@@ -7,10 +7,7 @@ function SearchTry() {
     const [search, setSearch] = useState('');
     const [showResults, setShowResults] = useState(false); 
 
-    useEffect(() => {
-        fetchBooks();
-        fetchAuthors();
-    }, []);
+    
 
     const fetchBooks = () => {
         axios.get("http://localhost:8000/api/getBooks")
@@ -41,6 +38,30 @@ function SearchTry() {
             setShowResults(false);
         }
     };
+
+
+
+    useEffect(() => {
+        fetchBooks();
+        fetchAuthors();
+        
+        
+        const handleKeyDown = (e) => {
+            if (e.key === 'Enter') {
+                setShowResults(true);
+            }
+            // else{
+            //     setShowResults(false);
+            // }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyDown);
+            
+        };
+    }, []);
 
     const handleBtnSearch = () => {
         setShowResults(true);
