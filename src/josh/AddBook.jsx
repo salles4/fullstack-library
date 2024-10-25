@@ -89,6 +89,7 @@ const AddBook = () => {
       placeholder="Book Description"
       value={newBook.bookdesc}
       required
+      maxLength="150"
       onChange={(e) => setNewBook({...newBook, bookdesc: e.target.value})}
     />
     <label>Book Cover</label>
@@ -103,6 +104,7 @@ const AddBook = () => {
 
     <div className='addbookctn2'>
     
+    <label>Category</label>
     <select value={newBook.category} onChange={(e) => setNewBook({...newBook, category: e.target.value})}>
       <option value="" disabled>Select Category</option>
       <option>General Knowledge</option>

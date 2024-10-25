@@ -11,7 +11,7 @@ const AddBook = () => {
   const fetchBooks = () => {
     axios.get("http://localhost:8000/api/getBooks")
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         setBooks(response.data);
       })
       .catch((error) => {
@@ -19,14 +19,24 @@ const AddBook = () => {
       });
   };
 
-  const handleDeleteBook = (id) => {
-    axios.delete(`http://localhost:8000/api/deleteBooks/${id}`)
-      .then(() => {
+  const handleDeleteBook = (id, booktitle) => {
+
+    const delConf = prompt("Enter book title to confirm book deletion (case-sensitive):")
+
+    if(delConf === booktitle){
+      axios.delete(`http://localhost:8000/api/deleteBooks/${id}`)
+        .then(() => {
         fetchBooks();
       })
       .catch((error) => {
         console.log(error);
       });
+      alert("Book Deletion Successful!")
+    }else{
+      alert("Book Deletion Unsuccessful!")
+    }
+
+    
   };
 
   return (
@@ -61,7 +71,7 @@ const AddBook = () => {
                 <td>{book.isbn}</td>
                 <td>
                   <button>EDIT</button>
-                  <button onClick={() => handleDeleteBook(book._id)}>DELETE</button>
+                  <button onClick={() => handleDeleteBook(book._id, book.booktitle)}>DELETE</button>
                 </td>
               </tr>
             ))}
