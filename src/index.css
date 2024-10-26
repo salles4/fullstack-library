@@ -124,7 +124,6 @@
 }
 
 .allBooksTable{
-  
   width: 90%;
   margin-left: 5%;
 }
@@ -143,6 +142,59 @@ td img {
   display: inline-block;     
   max-width: 150px;          
   height: auto;              
+}
+
+.editbooktitle{
+  margin-top: 50px;
+  font-family: GothamRoundedBook;
+  text-align: center;
+}
+
+.editbookbtn{
+  font-family: GothamRoundedBook;
+  width: 115px;
+}
+
+.cancelbtn{
+  font-family: GothamRoundedBook;
+  width: 115px;
+}
+
+.allbookctn{
+  margin-top: -80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.allbookctn1{
+  margin-top: 100px;
+  margin-right: 10px;
+  /* background-color: pink; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.allbookctn2{
+  margin-top: 100px;
+  margin-left: 10px;
+  /* background-color: salmon; */
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.allbookbtnctn{
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* background-color: pink; */
+  margin-left: 379px;
+  margin-top: 20px;
 }
 
 

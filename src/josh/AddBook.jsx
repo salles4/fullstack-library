@@ -103,7 +103,6 @@ const AddBook = () => {
     </div>
 
     <div className='addbookctn2'>
-    
     <label>Category</label>
     <select value={newBook.category} onChange={(e) => setNewBook({...newBook, category: e.target.value})}>
       <option value="" disabled>Select Category</option>
@@ -118,8 +117,6 @@ const AddBook = () => {
       <option>Literature</option>
       <option>History and Geography</option>
     </select>
-
-
 
     <label>Author</label>
     <input
