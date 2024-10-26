@@ -35,7 +35,7 @@ const AddBook = () => {
       .catch((error) => {
         console.log(error);
       });
-      alert("Book Deletion Successful!")
+      alert("Book Deletion of "+booktitle+" Successful!")
     }else{
       alert("Book Deletion Unsuccessful!")
     }
