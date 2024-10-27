@@ -37,21 +37,19 @@ const BooksCarousel = ({ books }) => {
                  <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-10' >
  
                      {/* Image Section (Left Column) */}
-                     <div className='flex justify-center items-center border-2 min-w-[300px] min-h-[400px]'>
-                        <button className='m-10 ' onClick={goToPrev}>Previous</button>
+                     <div className='flex justify-center items-center border-2 min-w-[200px] min-h-[400px]'>
                         {books.map((book, index) => (
                         <div
                             key={book._id}
-                            className={`carousel-item w-full max-w-lg-auto ${index === currentIndex ? 'active' : ''}`}
+                            className={`carousel-item flex justify-center ${index === currentIndex ? 'active' : ''}`}
                             style={{ display: index === currentIndex ? 'block' : 'none' }}
                         >
                             <img 
-                            className="w-full h-auto object-cover rounded-lg shadow-lg"
+                            className="w-60 h-auto object-contain rounded-lg shadow-lg"
                             src={book.bookcover} 
                             alt="book cover" />
                         </div>
                         ))}
-                        <button className='m-10 px-5' onClick={goToNext}>Next</button>
                         </div>
                      {/* Info (Right Column) */}
                      <div>
@@ -63,13 +61,15 @@ const BooksCarousel = ({ books }) => {
                             <h1 className='text-4xl font-bold mt-5 sm:text-center md:text-start '>{book.booktitle}</h1>
                             <div className='font-semibold text-lg text-ellipsis overflow-hidden sm:text-center md:text-start '>
                             <p >Written by: <span className='text-sm'>{book.author}</span> </p>
-                            <p>Published by: <span className='text-sm'>{book.publisher}</span></p>
-                            <p>Category: <span className='text-sm'>{book.category}</span></p>
-                            <p >Shelf No. <span className='text-sm'>{book.shelfno}</span></p>
-                            <p >ISBN: <span className='text-sm'>{book.isbn} </span></p>
-                            <p className='opacity-60 mt-2 m-1 mb-5'>{book.bookdesc}</p>
-                            <button>View Details</button>
-                            </div>
+                            <p className='opacity-60 mt-2 m-1 mb-5'>{book.bookdesc}</p>                       
+                          </div>
+                            <button className='bg-red-950 px-4 py-2 rounded-full
+                                hover:scale-105 duration-200 flex items-center gap-3 text-white' > Show Details
+                                <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                              </svg>
+                            </button>     
                         </div>
                         ))}      
                     </div>      
@@ -80,13 +80,6 @@ const BooksCarousel = ({ books }) => {
      </main>
  
      </>
-  //     <div className="carouselMainCont">
-        
-     
-
- 
-  
-  // </div>
     );
   };
 

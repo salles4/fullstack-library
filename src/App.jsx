@@ -2,7 +2,7 @@ import { NavLink, Route, Routes } from "react-router-dom"
 import Francis from "./cis/Francis";
 
 import HomePage from './steph/HomePageComponents/HomePage/HomePage'
-import BooksPage from './steph/BooksPageComponents/BooksPage'
+import BooksPage from './steph/BooksPageComponents/ShowAllBooks' //new for automatic featured books
 import AuthorsPage from './steph/AuthorsPageComponents/AuthorsPage'
 
 
