@@ -154,6 +154,7 @@ td img {
 
 
 /* --------------- CSS FOR BOOKS CAROUSEL STARTS HERE -------------- */
+
 /* .carouselMainCont{
   width: 100%;
   height: 45vh;
@@ -246,8 +247,8 @@ td img {
   margin-top: 20px;
 }
 .imagesHolder img {
-  width: 10vw;
-  height: 40vh;
+  width: 18vw;
+  height: 45vh;
   border-radius: 20px;
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 4); 
