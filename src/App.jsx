@@ -3,7 +3,7 @@ import Francis from "./cis/Francis";
 
 import HomePage from './steph/HomePageComponents/HomePage/HomePage'
 import BooksPage from './steph/BooksPageComponents/ShowAllBooks' //new for automatic featured books
-import AuthorsPage from './steph/AuthorsPageComponents/AuthorsPage'
+import AuthorsPage from './steph/AuthorsPageComponents/ShowAllAuthors'  //new for automatic featured authors
 
 
 import AddBook from "./josh/AddBook";
