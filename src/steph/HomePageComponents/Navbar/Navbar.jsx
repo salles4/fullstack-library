@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';;
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
@@ -7,7 +8,6 @@ const Navbar = () => {
   const handleBack = () => {
     navigate(-1); 
   };
-
   return (
     <nav className='absolute top-0 left-0 w-full text-white bg-red-950'>
       <button onClick={handleBack} className='text-white'>
