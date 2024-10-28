@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../steph/HomePageComponents/Navbar/Navbar';
+import { Link } from 'react-router-dom'
 
 
 const BooksCarousel = ({ books }) => {
@@ -21,10 +22,13 @@ const BooksCarousel = ({ books }) => {
   
 
     useEffect(() => {
-      const interval = setInterval(goToNext, 8000);
+      const interval = setInterval(goToNext, 5000);
   
       return () => clearInterval(interval);
     }, [totalBooks]);
+
+
+    
   
     return (
 
@@ -52,27 +56,29 @@ const BooksCarousel = ({ books }) => {
                         ))}
                         </div>
                      {/* Info (Right Column) */}
-                     <div>
-                        {books.map((book, index) => (
+                    <div>
+                      {books.map((book, index) => (
                         <div
                             key={book._id}
                             className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
                             style={{ display: index === currentIndex ? 'block' : 'none' }}>
-                            <h1 className='text-4xl font-bold mt-5 sm:text-center md:text-start '>{book.booktitle}</h1>
-                            <div className='font-semibold text-lg text-ellipsis overflow-hidden sm:text-center md:text-start '>
-                            <p >Written by: <span className='text-sm'>{book.author}</span> </p>
-                            <p className='opacity-60 mt-2 m-1 mb-5'>{book.bookdesc}</p>                       
-                          </div>
-                            <button className='bg-red-950 px-4 py-2 rounded-full
-                                hover:scale-105 duration-200 flex items-center gap-3 text-white' > Show Details
-                                <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                              </svg>
-                            </button>     
+                            <h1 className='text-4xl font-bold mt-5 sm:text-center md:text-start'>{book.booktitle}</h1>
+                            <div className='font-semibold text-lg text-ellipsis overflow-hidden sm:text-center md:text-start'>
+                                <p>Written by: <span className='text-sm'>{book.author}</span></p>
+                                <p className='opacity-60 mt-2 m-1 mb-5'>{book.bookdesc}</p>
+                            </div>
+                            <button className='bg-red-950 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3'>
+                              <Link to={`/book/overview/${book._id}`} className='flex items-center gap-3 text-white'>
+                                  Show Details
+                                  <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                      <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                              </Link>
+                          </button>
                         </div>
-                        ))}      
-                    </div>      
+                      ))}
+                  </div>
                  </div>
              </div>
              </div>

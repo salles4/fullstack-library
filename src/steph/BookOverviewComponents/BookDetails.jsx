@@ -27,11 +27,11 @@ const BookDetails = () => {
         <section>
           <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-10'>
             <div className='text-start m-5'>
-              <h1>{id}</h1>
-              <p>Category: {book.booktittle}</p>
+              <h1>{book.booktitle}</h1>
+              <p>Category: {book.category}</p>
               <p>Author: {book.author}</p>
               <p>Publisher: {book.publisher}</p>
-              <p>Shelf No: {book.shelfNo}</p>
+              <p>Shelf No: {book.shelfno}</p>
               <p>ISBN: {book.isbn}</p>
               <div className='text-end mt-10'>
                 <button>Edit</button>
