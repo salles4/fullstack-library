@@ -41,7 +41,7 @@ const ShowAllBooks = () => {
                             className="block mx-auto transform -translate-y-[100px]  h-60 object-contain" />
                         </div>
                         <div className="p-4 text-center  text-ellipsis">
-                            <h3 className="text-lg font-bold ">{author.link}</h3>
+                            <p className="text-lg font-bold ">{author.link}</p>
                             <p className="text-sm text-gray-700">{author.bio}</p>
                         </div>
                     </div>

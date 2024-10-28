@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../HomePageComponents/Navbar/Navbar'
+import { Link } from 'react-router-dom';
 // import ShowAllAuthors from './ShowAllAuthors'
 
 
@@ -62,12 +63,14 @@ const BooksPage = ({authors}) => {
                             <div className='font-semibold text-lg text-ellipsis overflow-hidden sm:text-center md:text-start '>
                             <p className='opacity-60 mt-2 m-1 mb-5'>{author.bio}</p>                       
                           </div>
-                            <button className='bg-red-950 px-4 py-2 rounded-full
-                                hover:scale-105 duration-200 flex items-center gap-3 text-white' > Show Details
+                            <button className='bg-red-950 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 text-white' > 
+                                <Link to={`/author/overview/${author._id}`} className='flex items-center gap-3 text-white'>
+                                Show Details
                                 <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                               </svg>
+                              </Link>
                             </button>     
                         </div>
                         ))}      
