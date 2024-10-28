@@ -28,7 +28,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>General Knowledge</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -43,7 +42,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Philosophy and Psychology</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -57,7 +55,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Religion</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -74,7 +71,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Social Sciences</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -89,7 +85,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Languages</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -104,7 +99,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Science</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -119,7 +113,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Technology</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -134,7 +127,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Arts and Recreation</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -149,7 +141,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>Literature</h1>
-                
 
                 <div className='imagesHolder'>
                     {books
@@ -164,7 +155,6 @@ function BookCategory(){
 
             <div className='mainCont'>
                 <h1 className='allTitle'>History and Geography</h1>
-                
 
                 <div className='imagesHolder'>
                     {books

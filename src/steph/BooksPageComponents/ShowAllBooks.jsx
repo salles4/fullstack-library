@@ -1,6 +1,8 @@
 
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import BooksPage from './BooksPage';
+
 
 
 const ShowAllBooks = () => {
@@ -22,6 +24,10 @@ const ShowAllBooks = () => {
         });
     };
     return (
+        <>
+        
+        <BooksPage books={books} />
+
         <div className='container '>
             <div className='text-center font-bold text-3xl mt-5 mb-[130px] '>
                 <h1>More Books</h1>
@@ -42,6 +48,7 @@ const ShowAllBooks = () => {
                 ))}
             </div>
         </div>  
+        </>
       );
 }
 
