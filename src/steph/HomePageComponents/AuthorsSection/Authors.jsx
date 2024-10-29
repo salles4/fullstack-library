@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Authors(props){
 
   return (
     // to display contents
+    <Link className='text-black' to={"/author/overview/"+props.id}>
     <div className='container'>
       <div className=' min-h-[450px] min-w-[300px] shadow-md rounded-lg bg-gray-100 hover:shadow-xl mb-3'>
         <div key={props.id}> 
@@ -23,5 +25,6 @@ export default function Authors(props){
         </div>
       </div>
     </div>
+    </Link>
   );
 }

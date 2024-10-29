@@ -44,7 +44,7 @@ const ShowAllBooks = () => {
                                 alt={book.booktitle} 
                                 className="block mx-auto transform -translate-y-[100px]  h-60 object-contain" />
                             </div>
-                            <div className="p-4 text-center ">
+                            <div className="p-4 text-center text-black ">
                                 <h3 className="text-lg font-bold ">{book.booktitle}</h3>
                                 <p className="text-sm text-gray-700">{book.bookdesc}</p>
                             </div>
