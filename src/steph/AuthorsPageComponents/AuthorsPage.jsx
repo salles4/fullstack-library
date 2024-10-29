@@ -35,7 +35,7 @@ const BooksPage = ({authors}) => {
      <section >
              <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px]' >
              <div>
-                 <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-10' >
+                 <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-5' >
  
                      {/* Image Section (Left Column) */}
                      <div className='flex justify-center items-center border-2 min-w-[200px] min-h-[400px]'>
