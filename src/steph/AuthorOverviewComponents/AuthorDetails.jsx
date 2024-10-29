@@ -3,6 +3,8 @@ import Navbar from '../HomePageComponents/Navbar/Navbar'
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Footer from '../HomePageComponents/Footer/Footer';
+
 
 const BookDetails = () => {
   const { id } = useParams(); 
@@ -49,6 +51,7 @@ const BookDetails = () => {
           <SuggestedWorks/>
         </section>
       </main>
+      <Footer/>
     </>
   )
 }

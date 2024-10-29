@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../HomePageComponents/Navbar/Navbar';
 import bgImagee from "../HomePageComponents/HomePage/bgImage.png";
+import Footer from '../HomePageComponents/Footer/Footer';
 
 const bgImage = {
   backgroundImage: `url(${bgImagee})`,
@@ -117,6 +118,7 @@ const AboutPage = () => {
           </div>
         </section>
       </main>
+      <Footer/>
     </>
   );
 };

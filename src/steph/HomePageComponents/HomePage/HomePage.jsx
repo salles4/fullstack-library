@@ -5,6 +5,8 @@ import AboutUsSection from "../AboutUsSection/AboutUsSection";
 import BooksSection from "../BooksSection/BooksSection";
 import CategorySection from "../CategoriesSection/CategorySection";
 import AuthorsSection from "../AuthorsSection/AuthorsSection";
+import Footer from '../Footer/Footer';
+
 
 const bgImage ={
     backgroundImage: `url(${bgImagee})`,
@@ -37,6 +39,7 @@ const Home =()=>{
             <section><BooksSection/></section>
             <section><CategorySection/></section>
             <section><AuthorsSection/></section>
+            <Footer/>
         </main>
     );
 };

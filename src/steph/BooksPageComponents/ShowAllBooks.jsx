@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import BooksPage from './BooksPage';
 import { Link } from 'react-router-dom'
+import Footer from '../HomePageComponents/Footer/Footer';
 
 
 
@@ -52,6 +53,7 @@ const ShowAllBooks = () => {
                 ))}
             </div>
         </div>  
+        <Footer/>
         </>
       );
 }

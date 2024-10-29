@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../HomePageComponents/Navbar/Navbar'
 import { Link } from 'react-router-dom';
+
 // import ShowAllAuthors from './ShowAllAuthors'
 
 
@@ -33,7 +34,7 @@ const BooksPage = ({authors}) => {
      <nav><Navbar/></nav>
      <main>
      <section >
-             <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px]' >
+             <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] shadow-lg' >
              <div>
                  <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-5' >
  
@@ -60,7 +61,7 @@ const BooksPage = ({authors}) => {
                             className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
                             style={{ display: index === currentIndex ? 'block' : 'none' }}>
                             <h1 className='text-4xl font-bold mt-5 sm:text-center md:text-start '>{author.name}</h1>
-                            <div className='font-semibold text-lg text-ellipsis overflow-hidden sm:text-center md:text-start '>
+                            <div className='text-lg text-ellipsis overflow-hidden sm:text-center md:text-start '>
                             <p className='opacity-60 mt-2 m-1 mb-5'>{author.bio}</p>                       
                           </div>
                             <button className='bg-red-950 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 text-white' > 

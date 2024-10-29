@@ -2,6 +2,8 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import AuthorsPage from './AuthorsPage';
+import Footer from '../HomePageComponents/Footer/Footer';
+
 
 
 
@@ -48,6 +50,8 @@ const ShowAllBooks = () => {
                 ))}
             </div>
         </div>  
+        <Footer/>
+
         </>
       );
 }
