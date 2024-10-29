@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 
 const AboutUsSection = () => {
@@ -19,15 +20,16 @@ const AboutUsSection = () => {
               nemo consectetur ullam quia eveniet, dicta esse tempore, 
               totam quos veniam quo a laborum incidunt.
             </div>
-            
-            <button className='bg-red-950 px-4 py-2 rounded-full m-3 
-              hover:scale-105 duration-200 flex items-center gap-3 text-white' >
+
+            <Link to={"/about"}>  
+              <button className='bg-red-950 px-4 py-2 rounded-full m-3 hover:scale-105 duration-200 flex items-center gap-3 text-white' > 
                 Show More
-                <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-            </button>
+                    <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+              </button>
+            </Link>
           </div>
         
          {/* Image Section (Right Column) */}

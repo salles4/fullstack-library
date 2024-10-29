@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 
 const Navbar = () => {
   const navigate = useNavigate(); 
@@ -42,11 +44,13 @@ const Navbar = () => {
           </div>
 
           {/* Account Button */}
-          <div className='text-white'>
-            <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'>
-              Account
-            </button>
-          </div>
+            <div className='text-white'>
+              <Link to={"/jerome/userlogin"}>
+                <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'>
+                  Account
+                </button>
+              </Link>
+            </div>
         </div>
       </div>
     </nav>
