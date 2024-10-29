@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import { aboutus } from '../../data';
 
 
 const AboutUsSection = () => {
@@ -10,15 +11,7 @@ const AboutUsSection = () => {
           {/* Info (Left Column) */}
           <div >
             <h1 className='text-3xl font-bold m-3 pt-10'> About <span className=' text-amber-950' > Us </span> </h1>
-            <div className='mb-5 opacity-60 p-3'>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-              Ducimus ipsa dolores, quam reprehenderit id repellat laboriosam, 
-              dolor aliquam amet saepe alias quod eveniet corrupti! 
-              Quam iure dolores aperiam iusto doloribus.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-              Ipsa enim necessitatibus error laboriosam quas facere, 
-              nemo consectetur ullam quia eveniet, dicta esse tempore, 
-              totam quos veniam quo a laborum incidunt.
+            <div className='mb-5 opacity-60 p-3'> {aboutus[0].aboutUs} 
             </div>
 
             <Link to={"/about"}>  
