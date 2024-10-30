@@ -88,3 +88,11 @@ export const responsive = {
       description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio ullam dolores, autem illo libero fugiat pariatur, sint ea, dolore modi hic sunt",
     },
   ]
+
+  export const aboutus = [
+    {
+      aboutUs: "Welcome to ShelfWise, your go-to platform for exploring and discovering the world of literature! Our online library system connects readers with an extensive collection of books, resources, and opportunities to find your favorite literary gems. Whether you're searching for a new author, a specific genre, or category, ShelfWise makes it easy and enjoyable to discover and enjoy the world of books.",
+    }
+  ]
+    
+
