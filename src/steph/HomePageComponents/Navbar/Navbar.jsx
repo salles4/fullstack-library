@@ -25,8 +25,6 @@ const Navbar = () => {
             </div>
           </Link>
 
-
-
           {/* Search Bar */}
           <div className='w-full sm:w-auto sm:flex-1 max-w-xl mx-auto'>
             <div className='relative flex items-center w-full h-10 rounded-xl focus-within:shadow-lg bg-white overflow-hidden'>
