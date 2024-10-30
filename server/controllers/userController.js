@@ -114,5 +114,13 @@ const getBooksByID =(req, res ) =>{
     });
 };
 
+const getAuthorsByID =(req, res ) =>{
+    AuthorModel.findById(req.params.id)
+    .then(author => res.json(author))
+    .catch(err => {
+       console.log(err);
+       res.status(500).json({error: "Internal Server Error"});
+    });
+}
 
-module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID };
+module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID, getAuthorsByID };

@@ -18,7 +18,7 @@ router.get('/getContacts', userController.getContacts);
 router.post('/createContacts', userController.createContacts);
 
 router.get('/getBooks/:id', userController.getBooksByID);
-
+router.get('/getAuthors/:id', userController.getAuthorsByID);
 
 
 

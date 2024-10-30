@@ -3,7 +3,7 @@ import Francis from "./cis/Francis";
 
 import HomePage from './steph/HomePageComponents/HomePage/HomePage'
 import BooksPage from './steph/BooksPageComponents/ShowAllBooks' //new for automatic featured books
-import AuthorsPage from './steph/AuthorsPageComponents/AuthorsPage'
+import AuthorsPage from './steph/AuthorsPageComponents/ShowAllAuthors'  //new for automatic featured authors
 
 
 import AddBook from "./josh/AddBook";
@@ -98,7 +98,7 @@ function App() {
         {/* New  */}
         <Route path="/about" element={<AboutPage />} />
         <Route path="/book/overview/:id" element={<BookOverview />} />
-        <Route path="/author/overview" element={<AuthorOverview />} />
+        <Route path="/author/overview/:id" element={<AuthorOverview />} />
           
         <Route path="/contacts/us" element={<ContactUs />} />
 
