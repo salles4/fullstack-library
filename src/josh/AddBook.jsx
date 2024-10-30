@@ -89,7 +89,7 @@ const AddBook = () => {
       placeholder="Book Description"
       value={newBook.bookdesc}
       required
-      maxLength="150"
+      maxLength="300"
       onChange={(e) => setNewBook({...newBook, bookdesc: e.target.value})}
     />
     <label>Book Cover</label>
