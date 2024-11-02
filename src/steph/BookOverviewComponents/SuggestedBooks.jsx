@@ -34,7 +34,7 @@ const SuggestedBooks = () => {
             </div>
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
                 {books.map((book) => (
-                    <Link to={`/book/overview/${book._id}`} > 
+                    <Link to={`/book/overview/${book._id}`} key={book._id}> 
                         <div className= " bg-slate-50 drop-shadow-xl rounded-xl sm:min-w-[250px]  transition-transform transform hover:scale-105 hover:bg-gray-100 group max-w-[420px] mb-[100px]">
                             <div key={book.id} className='h-[150px] '> 
                                 <img src={book.bookcover} 

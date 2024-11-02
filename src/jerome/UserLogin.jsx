@@ -45,10 +45,12 @@ function UserLogin() {
         }
 
         //-------------- when user is successfully logged in
+        localStorage.setItem("username", username)
         setUsername('')
         setPassword('')
         setError('');
         console.log('User logged in successfully');
+
 
     };
 

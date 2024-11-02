@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../HomePageComponents/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 // import ShowAllBooks from './ShowAllBooks'
 
@@ -31,7 +30,6 @@ const BooksPage = ({books}) => {
 
   return (
     <>
-     <nav><Navbar/></nav>
      <main>
        <section >
              <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] shadow-lg' >

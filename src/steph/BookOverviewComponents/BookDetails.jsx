@@ -1,5 +1,4 @@
 import SuggestedBooks from '../BookOverviewComponents/SuggestedBooks';
-import Navbar from '../HomePageComponents/Navbar/Navbar';
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -25,7 +24,6 @@ const BookDetails = () => {
 
   return (
     <>
-      <nav><Navbar/></nav>
       <main>
         <section>
         <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] shadow-lg' >
