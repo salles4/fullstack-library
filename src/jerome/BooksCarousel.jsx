@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../steph/HomePageComponents/Navbar/Navbar';
 import { Link } from 'react-router-dom'
 
 
@@ -33,7 +32,6 @@ const BooksCarousel = ({ books }) => {
     return (
 
       <>
-      <nav><Navbar/></nav>
       <main>
          <section >
              <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px]' >
