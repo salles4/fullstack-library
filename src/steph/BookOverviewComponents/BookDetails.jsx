@@ -27,32 +27,38 @@ const BookDetails = () => {
       <main>
         <section>
         <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] shadow-lg' >
-          
-          <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-5 '>
+          <div className='container grid grid-cols-1 md:grid-cols-2 p-5 '>
+
+            {/* Book Info */}
             <div className='text-start m-5 p-10'>
-              <h2 className="text-2xl font-semibold mb-4">Book Details</h2>
+              <h2 className="text-2xl font-semibold ">Book Details</h2>
+                  <p className="text-sm"><strong>Shelf No:</strong> {book.shelfno}</p>
+                  <p className="text-sm mb-4"><strong>ISBN:</strong> {book.isbn}</p>
                   <p className="text-lg"><strong>Category:</strong> {book.category}</p>
                   <p className="text-lg"><strong>Author:</strong> {book.author}</p>
                   <p className="text-lg"><strong>Publisher:</strong> {book.publisher}</p>
-                  <p className="text-lg"><strong>Shelf No:</strong> {book.shelfno}</p>
-                  <p className="text-lg"><strong>ISBN:</strong> {book.isbn}</p>
+                  <p className="text-lg"><strong>Description:</strong> </p>
+                  <p>{book.bookdesc}</p>
+
+                  
               <div className='text-end mt-10'>
-              <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Edit</button>
-              <button className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition ml-2'>Delete</button>
+                <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Edit</button>
+                <button className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition ml-2'>Delete</button>
               </div>
             </div>
-            <div>
-               {/* Book Cover */}
-               <div className="flex justify-center min-w-[200px] min-h-[400px]">
-                <div className="border-2 min-w-[300px] min-h-[400px] rounded-lg overflow-hidden">
-                  <img src={book.bookcover} alt="Book Cover"
-                    className="w-full h-auto object-cover" />
+
+            {/* Book Cover */}
+              <div className="flex justify-center">
+                <div className="border-2 rounded-lg overflow-hidden h-[500px] w-[500px] flex items-center justify-center">
+                  <img 
+                    src={book.bookcover} 
+                    alt="Author Cover"
+                    className="w-full h-full object-contain p-5" 
+                  />
                 </div>
               </div>
             </div>
           </div>
-          </div>
-
         </section>
 
         <section>
