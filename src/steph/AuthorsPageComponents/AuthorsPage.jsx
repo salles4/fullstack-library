@@ -79,10 +79,7 @@ const BooksPage = ({authors}) => {
              </div>
          </section>
     </main>
-
-    </>
-   
-  
+    </> 
   )
 }
 

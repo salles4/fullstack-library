@@ -32,8 +32,8 @@ const ShowAllBooks = () => {
         <BooksPage books={books} />
         <div className='container '>
 
-            <div className='text-center font-bold text-3xl mt-5 mb-[130px] '>
-                <h1>More Books</h1>
+        <div className='text-center font-bold text-3xl mt-7 mb-[150px]  '>
+            <h1>More Books</h1>
             </div>
              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
                 {books.map((book) => (
