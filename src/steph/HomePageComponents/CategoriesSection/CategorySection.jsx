@@ -39,8 +39,8 @@ const CategorySection = () => {
       <div className='container'>
         {/* Header */}
         <div className='mt-10 mb-10 flex justify-between m-9'>
-          <h1>Categories</h1>
-          <Link className="text-black text-lg" to={"/jerome/bookcategory"}>See All</Link>
+        <h1 className='text-4xl font-bold text-center'>Categories</h1>
+          <Link className="text-black text-lg font-semibold  mt-3  hover:underline hover:text-blue-600" to={"/jerome/bookcategory"}>See All</Link>
         </div>
 
         {/* Responsive style for the slider */}

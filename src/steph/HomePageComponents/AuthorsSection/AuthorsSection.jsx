@@ -50,8 +50,8 @@ const AuthorsSection = () => {
       <div className='container'>
         {/* Header */}
         <div className='mt-10 mb-10 flex justify-between m-9'>
-          <h1 >Authors</h1>
-          <Link className="text-black text-lg" to={"/author"} >See All</Link>
+        <h1 className='text-4xl font-bold text-center'>Authors</h1>
+          <Link className="text-black text-lg font-semibold  mt-3  hover:underline hover:text-blue-600" to={"/author"} >See All</Link>
           </div>
         {/* nakapasok ang responsive and authors details sa data.js  */}
         <Carousel responsive={responsive}>{authorss}</Carousel>
