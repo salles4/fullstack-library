@@ -25,21 +25,23 @@ const SuggestedBooks = ({ authorName }) => {
   useEffect(() => {
     // Filter books by the selected author
     if (authorName) {
-      const filteredBooks = books.filter(book => book.author === authorName);
+      const filteredBooks = books.filter(book => 
+        book.author.toLowerCase() === authorName.toLowerCase()
+    );
       setAuthorBooks(filteredBooks);
     }
   }, [books, authorName]);
 
   return (
     <div className='container'>
-      <div className='text-center font-bold text-3xl mt-5 mb-10'>
-        <h1>More From This Author</h1>
+      <div className='text-center font-bold text-3xl mt-10 mb-10'>
+      <h1>More From This Author</h1>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-6">
         {authorBooks.length > 0 ? (
           authorBooks.map((book) => (
             <Link to={`/book/overview/${book._id}`} key={book._id}>
-              <div className="bg-gray-100 shadow-xl rounded-xl overflow-hidden transition-transform transform hover:scale-105 hover:bg-red-950 hover:text-white max-w-[420px]">
+              <div className="bg-gray-100 shadow-xl rounded-xl group overflow-hidden transition-transform transform hover:scale-105 hover:bg-red-950 hover:text-white max-w-[420px]">
                 <img 
                   src={book.bookcover} 
                   alt={`${book.booktitle} cover`} 

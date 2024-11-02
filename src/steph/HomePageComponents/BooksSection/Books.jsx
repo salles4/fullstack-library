@@ -13,7 +13,7 @@ export default function Books(props) {
               className='rounded-b-2xl mt-3 absolute inset-0 w-full h-full object-contain'
             />
           </div>
-          <div className='p-3 text-center overflow-hidden min-h-[150px]'>
+          <div className='p-3 text-center overflow-hidden min-h-[150px] text-ellipsis'>
             <p className='text-xl m-2 group-hover:text-white'>{props.name}</p>
             <div className='flex justify-center gap-2 text-center text-gray-600 text-sm group-hover:text-white'>
               <svg
