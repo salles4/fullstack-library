@@ -46,7 +46,7 @@ const AuthorsSection = () => {
 
     
   return (
-    <div className='min-h-[300px] ' >
+    <div className='min-h-[300px]  mb-10 ' >
       <div className='container'>
         {/* Header */}
         <div className='mt-10 mb-10 flex justify-between m-9'>
