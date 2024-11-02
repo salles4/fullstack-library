@@ -26,11 +26,14 @@ const BookDetails = () => {
     <nav><Navbar/></nav>
       <main>
         <section>
-          <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-10'>
-            <div className='text-start m-5 '>
-              <h1>Author Name: {author.name}</h1>
-                <p>Link {author.link}</p>
-                <p> Bio {author.bio}</p>
+        <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] shadow-lg' >
+
+          <div className='container grid grid-cols-1 md:grid-cols-2 gap-10 p-5'>
+            <div className='text-start m-5 p-10'>
+              <h2 className="text-2xl font-semibold mb-4">Author Details</h2> 
+                <p className="text-lg"><strong>Author Name:</strong> {author.name}</p>
+                <p className="text-lg"><strong>Link:</strong> {author.link}</p>            
+                <p className="text-lg"><strong>Bio :</strong> {author.bio}</p>
                 
                 <div className='text-end mt-10'>
                 <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Edit</button>
@@ -38,13 +41,16 @@ const BookDetails = () => {
                 </div>
             </div>
 
-              <div>
-                <div className="flex justify-center border-2 min-w-[300px] min-h-[400px] ">
-                  <img src={author.picture} alt={author.name}
-                    className="w-full h-auto object-cover rounded-lg shadow-lg "/>
+               {/* Author Cover */}
+               <div className="flex justify-center min-w-[100px] min-h-[200px]">
+                <div className="border-2 min-w-[100px] min-h-[200px] rounded-lg overflow-hidden">
+                  <img src={author.picture} alt="Book Cover"
+                    className="w-[450px] h-auto object-contain" />
                 </div>
-            </div>
+              </div>
           </div>
+          </div>
+
         </section>
 
         <section>

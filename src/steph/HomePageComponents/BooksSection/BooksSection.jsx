@@ -68,6 +68,8 @@ const BooksSection = () => {
       name={item.booktitle} 
       img={item.bookcover}
       description={item.bookdesc} 
+      author={item.author}
+        
     />
   ));
       

@@ -5,14 +5,14 @@ export default function Categories(props){
   return (
         // to display contents
         <div className='container'>
-        <div className=' min-h-[400px] min-w-[300px] shadow-md rounded-lg bg-gray-50 hover:shadow-xl mb-3'>
+        <div className=' min-h-[400px] min-w-[300px] rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-gray-100 md:px-5'>
           <div key={props.id}> 
             <div> 
               <div className='relative min-h-[400px] overflow-hidden  '>
                 <img  
                   src={props.img} 
                   alt='Book' 
-                  className='rounded-b-2xl absolute inset-0 w-full h-full object-contain' 
+                className=' mt-5 rounded-xl absolute inset-0 w-full h-full object-contain' 
                   />
               </div>
             </div>

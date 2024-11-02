@@ -5,6 +5,7 @@ import AboutUsSection from "../AboutUsSection/AboutUsSection";
 import BooksSection from "../BooksSection/BooksSection";
 import CategorySection from "../CategoriesSection/CategorySection";
 import AuthorsSection from "../AuthorsSection/AuthorsSection";
+import AdminSection from "../AdminSection/AdminSection";
 import Footer from '../Footer/Footer';
 
 
@@ -36,6 +37,7 @@ const Home =()=>{
             </section>
 
             <section><AboutUsSection/></section>
+            <section><AdminSection/></section>
             <section><BooksSection/></section>
             <section><CategorySection/></section>
             <section><AuthorsSection/></section>
