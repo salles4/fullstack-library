@@ -27,11 +27,10 @@ const CategorySection = () => {
 
   
   const categoryItems = books.map((item) => (
-    <Categories 
-      key={item.id}
-      name={item.booktitle} 
+    <Categories
+      key={item._id}
+      name={item.category}
       img={item.bookcover}
-      category={item.category} 
     />
   ));
       
@@ -47,7 +46,7 @@ const CategorySection = () => {
         {/* Responsive style for the slider */}
         <Carousel responsive={responsive}>{categoryItems}</Carousel>
       </div>
-    </div>
+      </div>
   );
 }
 

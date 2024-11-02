@@ -1,6 +1,5 @@
 import React from "react";
 import bgImagee from "./bgImage.png";
-import Navbar from "../Navbar/Navbar";
 import AboutUsSection from "../AboutUsSection/AboutUsSection";
 import BooksSection from "../BooksSection/BooksSection";
 import CategorySection from "../CategoriesSection/CategorySection";
@@ -22,9 +21,7 @@ const Home =()=>{
             {/* First Section */}
             {/* Bg */}
             <section style={bgImage} className="min-h-screen w-full relative">
-                <div  className="container">
-                    {/* NavBar section */}
-                   <Navbar/> 
+                <div  className="container"> 
                     {/* text content section */}
                     <div className="flex items-center justify-start min-h-[80vh]"> 
                         <div className="text-lime-50 text-center">

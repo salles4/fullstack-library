@@ -1,5 +1,4 @@
 import SuggestedWorks from '../AuthorOverviewComponents/SuggestedWorks';
-import Navbar from '../HomePageComponents/Navbar/Navbar';
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -22,7 +21,6 @@ const BookDetails = () => {
 
   return (
     <>
-      <nav><Navbar/></nav>
       <main>
         <section>
           <div className='bg-gray-100 min-h-[500px] w-full rounded-b-[100px] shadow-lg' >
@@ -49,8 +47,8 @@ const BookDetails = () => {
                     alt="Author Cover"
                     className="w-full h-full object-contain p-5" 
                   />
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
         </section>

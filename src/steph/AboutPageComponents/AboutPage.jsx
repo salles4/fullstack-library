@@ -1,5 +1,4 @@
 import React from 'react';
-import Navbar from '../HomePageComponents/Navbar/Navbar';
 import bgImagee from "../HomePageComponents/HomePage/bgImage.png";
 import Footer from '../HomePageComponents/Footer/Footer';
 
@@ -40,7 +39,6 @@ const AboutPage = () => {
 
   return (
     <>
-      <Navbar />
       <main className="text-gray-200">
         {/* Hero Section */}
         <section style={bgImage} className="w-full relative py-10">
@@ -115,6 +113,13 @@ const AboutPage = () => {
         <section className="py-10 text-black text-center">
           <div className='container mx-auto'>
             <h1 className='text-3xl font-bold mb-5'>Additional Features</h1>
+          </div>
+        </section>
+
+        {/* Additional Features Section */}
+        <section className="py-10 text-black text-center">
+          <div className="container mx-auto">
+            <h1 className="text-3xl font-bold mb-5">Additional Features</h1>
           </div>
         </section>
       </main>
