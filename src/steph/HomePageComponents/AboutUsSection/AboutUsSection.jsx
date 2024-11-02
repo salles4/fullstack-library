@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { aboutus } from '../../data';
+import bgImagee from "../AboutUsSection/aboutUs2.png";
+
+
+
+
 
 
 const AboutUsSection = () => {
@@ -27,9 +32,14 @@ const AboutUsSection = () => {
         
          {/* Image Section (Right Column) */}
          <div className='p-5 mt-5'>
-            <div className="flex justify-center border-2 min-w-[300px] min-h-[400px] ">
-              <img src="/path/to/your/image.jpg" alt="About Us"
-                className="w-full h-auto object-cover rounded-lg shadow-lg "/>
+            <div className="flex justify-center ">
+                <div className="border-2 w-full max-w-lg rounded-lg overflow-hidden">
+                  <img
+                    src={bgImagee}
+                    alt="Featured Book"
+                    className="w-full h-auto object-cover shadow-lg"
+                  />
+                </div>
             </div>
           </div>
         </div>

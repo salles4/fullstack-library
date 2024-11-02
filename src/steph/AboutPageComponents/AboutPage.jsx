@@ -1,9 +1,12 @@
 import React from 'react';
-import bgImagee from "../HomePageComponents/HomePage/bgImage.png";
+import bgImagee from "../AboutPageComponents/aboutUs2.png";
+import bgImagee2 from "../AboutPageComponents/bgg.png";
+
+
 import Footer from '../HomePageComponents/Footer/Footer';
 
-const bgImage = {
-  backgroundImage: `url(${bgImagee})`,
+const bgImage2 = {
+  backgroundImage: `url(${bgImagee2})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
   backgroundRepeat: "no-repeat",
@@ -41,7 +44,7 @@ const AboutPage = () => {
     <>
       <main className="text-gray-200">
         {/* Hero Section */}
-        <section style={bgImage} className="w-full relative py-10">
+        <section style={bgImage2} className="w-full relative py-10">
           <div className="container mx-auto flex flex-col lg:flex-row items-center">
             <div className="flex justify-center lg:w-1/2">
               <div className="border-2 w-full max-w-lg rounded-lg overflow-hidden">
