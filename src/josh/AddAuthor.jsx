@@ -106,22 +106,26 @@ const Author = () => {
                     </div>
                 </div>
             </section>
+            
+            <section>
+                <div className='bg-gray-100 p-10'>
+                    <h1 className='text-4xl font-bold text-center text-gray-800 mb-5'>Author List</h1>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {authors.map(author => (
+                            <div key={author._id} className="bg-white p-4 rounded-lg shadow-md text-center flex flex-col">
+                                {author.picture && (
+                                    <img src={author.picture} alt={author.name} className="mt-2 h-24 w-24 rounded-full object-cover mx-auto" />
+                                )}
+                                <h3 className="font-semibold text-lg">{author.name}</h3>
+                                <a href={author.link} className="text-blue-500 hover:underline text-sm" target="_blank" rel="noopener noreferrer">Profile Link</a>
+                                <p className="text-gray-600">{author.bio}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>         
+            </section>
        
-            <div className='bg-gray-100 p-10'>
-                <h1 className='text-4xl font-bold text-center text-gray-800 mb-5'>Author List</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {authors.map(author => (
-                        <div key={author._id} className="bg-white p-4 rounded-lg shadow-md text-center flex flex-col">
-                            {author.picture && (
-                                <img src={author.picture} alt={author.name} className="mt-2 h-24 w-24 rounded-full object-cover mx-auto" />
-                            )}
-                            <h3 className="font-semibold text-lg">{author.name}</h3>
-                            <a href={author.link} className="text-blue-500 hover:underline text-sm" target="_blank" rel="noopener noreferrer">Profile Link</a>
-                            <p className="text-gray-600">{author.bio}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>          
+            
         </main>
     );
 };
