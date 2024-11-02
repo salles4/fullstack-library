@@ -32,15 +32,17 @@ const AuthorsSection = () => {
   }
 
   // Function to get the authorsdetails sa data.js
-  const authorss = authors.map((author)=> (
+  const authorss = authors.map((author) => (
     // Holder for props - Authors
-    <Authors 
+    <Authors
       id={author._id}
-      name={author.name} 
+      name={author.name}
       img={author.picture}
-      description={author.bio} 
+      description={author.bio}
       link={author.link}
-      /> ));
+      key={author._id}
+    />
+  ));
 
     
   return (

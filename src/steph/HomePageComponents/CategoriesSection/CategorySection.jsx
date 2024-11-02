@@ -27,27 +27,28 @@ const CategorySection = () => {
 
   
   const categoryItems = books.map((item) => (
-    <Categories 
-      key={item.id}
-      name={item.booktitle} 
+    <Categories
+      key={item._id}
+      name={item.category}
       img={item.bookcover}
-      category={item.category} 
     />
   ));
       
-  return (
-    <div className='min-h-[300px]'>
-      <div className='container'>
-        {/* Header */}
-        <div className='mt-10 mb-10 flex justify-between m-9'>
-          <h1>Categories</h1>
-          <Link className="text-black text-lg" to={"/jerome/bookcategory"}>See All</Link>
-        </div>
+    return (
+      <div className='min-h-[300px] ' >
+        <div className='container'>
+          {/* Header */}
+          <div className='mt-10 mb-10 flex justify-between m-9'>
+            <h1 >Categories</h1>
+            <Link className="text-black text-lg" to={"/jerome/bookcategory"} >See All</Link>
+          </div>
+
+          
 
         {/* Responsive style for the slider */}
         <Carousel responsive={responsive}>{categoryItems}</Carousel>
       </div>
-    </div>
+      </div>
   );
 }
 
