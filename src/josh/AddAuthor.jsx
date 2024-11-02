@@ -50,9 +50,9 @@ const Author = () => {
 
     return (
         <main style={bgImage2} className="min-h-screen w-full">
-            <section className='container p-5'>
-                <div className="container p-5 max-w-[800px] min-h-[750px] mx-auto">
-                <h1 className="text-3xl font-bold mb-6 text-center text-white mt-10 ">Add Author</h1>
+            <section className='container p-5 min-h-screen'>
+                <div className="container p-5 max-w-[800px] min-h-[750px] mx-auto ">
+                <h1 className="text-3xl font-bold mb-6 text-center text-white mt-10">Add Author</h1>
                 <div className="bg-white p-6 rounded-lg mb-8 shadow-xl shadow-gray-950">
                         <label className="block mb-2 font-medium">Author Name</label>
                         <input
