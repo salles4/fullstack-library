@@ -115,6 +115,13 @@ const AboutPage = () => {
             <h1 className='text-3xl font-bold mb-5'>Additional Features</h1>
           </div>
         </section>
+
+        {/* Additional Features Section */}
+        <section className="py-10 text-black text-center">
+          <div className="container mx-auto">
+            <h1 className="text-3xl font-bold mb-5">Additional Features</h1>
+          </div>
+        </section>
       </main>
       <Footer/>
     </>
