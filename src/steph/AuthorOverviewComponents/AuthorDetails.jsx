@@ -47,8 +47,8 @@ const BookDetails = () => {
                     alt="Author Cover"
                     className="w-full h-full object-contain p-5" 
                   />
+                  </div>
                 </div>
-              </div>
             </div>
           </div>
         </section>

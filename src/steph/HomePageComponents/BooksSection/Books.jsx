@@ -38,8 +38,8 @@ export default function Books(props) {
               <p className='mt-1 group-hover:text-white'>{props.author}</p>
             </div>
           </div>
+        </div>
       </div>
-    </div>
     </Link>
   );
 }
