@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 import BackIcon from './logo.svg';
 
@@ -10,7 +11,6 @@ const Navbar = () => {
   const handleBack = () => {
     navigate(-1); 
   };
-
   return (
     <nav className='absolute top-0 left-0 w-full text-white bg-red-950'>
      
@@ -24,8 +24,6 @@ const Navbar = () => {
               <h1 className='text-2xl font-semibold uppercase'> ShelfWise</h1>
             </div>
           </Link>
-
-
 
           {/* Search Bar */}
           <div className='w-full sm:w-auto sm:flex-1 max-w-xl mx-auto'>
