@@ -7,6 +7,7 @@ import Books from './Books';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
+import { Link } from 'react-router-dom'
 
 
 // For Card Slider
@@ -74,11 +75,16 @@ const BooksSection = () => {
   ));
       
   return (
-    <div className='min-h-[300px]'>
-      <div className='container'>
-        {/* Header */}
-        <div className='text-center font-bold text-3xl mt-5 mb-10'>
-          <h1>Books</h1>
+    <div className='min-h-[300px] py-10 bg-gray-50 mt-5'>
+      <div className='container mx-auto px-4'>
+      {/* Header */}
+      <div className='text-center mb-5'>
+          <h1 className='text-4xl font-bold text-gray-800'>Books</h1>
+          <p className='mt-2 text-gray-600'>Discover a collection of great books.
+            <Link className="text-gray-600 hover:underline hover:text-blue-500" to={"/books"}>
+              <span>See All</span>
+            </Link>
+          </p>
         </div>
         {/* Card Slider */}
         <Slider {...settings}>{bookss}</Slider>
