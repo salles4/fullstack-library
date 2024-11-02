@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import bgImagee2 from "../steph/AboutPageComponents/bgg.png";
+import AllBooks from "./AllBooks/"
 
 const bgImage2 = {
   backgroundImage: `url(${bgImagee2})`,
@@ -73,10 +74,10 @@ const AddBook = () => {
   }
 
   return( 
-    <main style={bgImage2} className="min-h-screen w-full flex items-center ">
-      <section className='container p-5 '>
-        <div className="container p-5 min-h-[750px] mx-auto" >
-          <h1 className="text-3xl font-bold mb-6 text-center text-white ">Add Book</h1>
+    <main style={bgImage2} className="min-h-screen w-full  ">
+      <section className='container p-5  min-h-screen'>
+        <div className="container p-5 min-h-[750px] mx-auto " >
+          <h1 className="text-3xl font-bold mb-6 text-center text-white mt-10">Add Book</h1>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-5  p-6 rounded-lg shadow-xl shadow-gray-950 bg-white'>
             <div>
               <label className='block mb-2 '>Book Title</label>
@@ -190,6 +191,10 @@ const AddBook = () => {
             </button>
           </div>
         </div>
+      </section>
+
+      <section>
+        <AllBooks/>
       </section>
     </main>
   );
