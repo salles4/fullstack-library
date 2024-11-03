@@ -49,18 +49,27 @@ const Navbar = ({userLoggedIn, handleStorageChange}) => {
               <button type="submit" className="text-white focus:outline-none font-medium rounded-xl text-sm px-4">Search</button>
             </div>
           </div>
-
-          <Link to={"/jerome/userlogin"}>
-            <div className='text-white'>
-                <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'
-                onClick={() => {
-                  localStorage.removeItem("username")
-                  handleStorageChange()
-                  }}>
-                  Log Out
+          {userLoggedIn ? 
+            <Link to={"/jerome/userlogin"}>
+              (<div className='text-white'>
+                  <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'
+                  onClick={() => {
+                    localStorage.removeItem("username")
+                    handleStorageChange()
+                    }}>
+                    Log Out
+                  </button>
+              </div>)
+            </Link>
+            :
+            (<div className='text-white'>
+              <Link to={"/jerome/userlogin"}>
+                <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'>
+                  Log In
                 </button>
-            </div>
-          </Link>
+              </Link>
+            </div>)
+          }
         </div>
       </div>
     </nav>
