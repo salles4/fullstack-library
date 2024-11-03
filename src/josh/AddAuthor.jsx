@@ -29,6 +29,18 @@ const Author = () => {
     };
 
     const handleCreateAuthor = () => {
+
+        if(newAuthor.name === "" || newAuthor.bio === "" || newAuthor.link === "" || newAuthor.picture === ""){
+            alert("Please complete all required fields! (*)")
+            return;
+        }
+
+        if(authNameChk){
+            alert("Author name already exists in the Database!")
+            handleReset();
+            return;
+        }
+
         axios.post("http://localhost:8000/api/createAuthors", newAuthor)
             .then(() => {
                 fetchAuthors();
@@ -48,6 +60,9 @@ const Author = () => {
         setNewAuthor({ name: '', bio: '', link: '', picture: '' });
     };
 
+    //identical author name checker
+    const authNameChk = authors.some(author => author.name === newAuthor.name);
+
     return (
         <main style={bgImage2} className="min-h-screen w-full">
             <section className='container p-5 min-h-screen'>
@@ -57,7 +72,7 @@ const Author = () => {
                         <label className="block mb-2 font-medium">Author Name</label>
                         <input
                             type="text"
-                            placeholder="Author Name"
+                            placeholder="Author Name*"
                             value={newAuthor.name}
                             required
                             onChange={(e) => setNewAuthor({ ...newAuthor, name: e.target.value })}
@@ -66,7 +81,7 @@ const Author = () => {
                         
                         <label className="block mb-2 font-medium">Author Bio</label>
                         <textarea
-                            placeholder="Author Bio"
+                            placeholder="Author Bio*"
                             value={newAuthor.bio}
                             required
                             onChange={(e) => setNewAuthor({ ...newAuthor, bio: e.target.value })}
@@ -76,7 +91,7 @@ const Author = () => {
                         <label className="block mb-2 font-medium">Author Link</label>
                         <input
                             type="text"
-                            placeholder="Author Link"
+                            placeholder="Author Link*"
                             value={newAuthor.link}
                             required
                             onChange={(e) => setNewAuthor({ ...newAuthor, link: e.target.value })}
@@ -86,7 +101,7 @@ const Author = () => {
                         <label className="block mb-2 font-medium">Author Picture URL</label>
                         <input
                             type="text"
-                            placeholder="Author Picture URL"
+                            placeholder="Author Picture URL*"
                             value={newAuthor.picture}
                             required
                             onChange={(e) => setNewAuthor({ ...newAuthor, picture: e.target.value })}

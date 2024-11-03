@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'; 
 import bgImagee2 from "../steph/AboutPageComponents/bgg.png";
 import AllBooks from "./AllBooks/"
 
@@ -11,6 +12,8 @@ const bgImage2 = {
 };
 
 const AddBook = () => {
+
+  const navigate = useNavigate();
   const [books, setBooks] = useState([]); 
   const [newBook, setNewBook] = useState({
     booktitle: '', 
@@ -23,7 +26,6 @@ const AddBook = () => {
     isbn: ''
   });
   
-
   useEffect(() => {
     fetchBooks();
   }, []);
@@ -40,14 +42,23 @@ const AddBook = () => {
       });
   }
 
+  //checks if book title already exists in the databse
+  const bookChk = books.some(book => book.booktitle === newBook.booktitle);
+
   const handleCreateBook = () => {
 
     if(newBook.booktitle === "" || newBook.bookdesc === "" || newBook.bookcover === "" || newBook.category === "" || newBook.author === "" 
       || newBook.publisher === "" || newBook.shelfno === "" || newBook.isbn === ""){
-        alert("Please complete all required fields!");
+        alert("Please complete all required fields! (*)");
       return;
     }
     
+    if(bookChk){
+      alert("Book Title already exists in the Database!")
+      clearEntries();
+      return;
+    }
+
     
     axios.post("http://localhost:8000/api/createBooks", newBook)
       .then(() => {
@@ -68,9 +79,12 @@ const AddBook = () => {
       });
   };
   
-
   const clearEntries = () => {
     setNewBook({booktitle: '', bookdesc: '', bookcover: '', category: '', author: '', publisher: '', shelfno: '', isbn: ''})
+  }
+
+  const cancelFunc = () => {
+    navigate('/home');
   }
 
   return( 
@@ -84,7 +98,7 @@ const AddBook = () => {
               <input
                 className='border rounded-lg w-full p-2'
                 type="text"
-                placeholder="Book Title"
+                placeholder="Book Title*"
                 value={newBook.booktitle}
                 required
                 onChange={(e) => setNewBook({...newBook, booktitle: e.target.value})}
@@ -94,7 +108,7 @@ const AddBook = () => {
               <label className='block mb-2 '>Book Description</label>
               <textarea
                 className='border rounded-lg w-full p-2'
-                placeholder="Book Description"
+                placeholder="Book Description*"
                 value={newBook.bookdesc}
                 required
                 maxLength="300"
@@ -106,7 +120,7 @@ const AddBook = () => {
               <input
                 className='border rounded-lg w-full p-2'
                 type="text"
-                placeholder="Book Cover URL"
+                placeholder="Book Cover URL*"
                 value={newBook.bookcover}
                 required
                 onChange={(e) => setNewBook({...newBook, bookcover: e.target.value})}
@@ -118,7 +132,7 @@ const AddBook = () => {
                 className='border rounded-lg w-full p-2'
                 value={newBook.category} 
                 onChange={(e) => setNewBook({...newBook, category: e.target.value})}>
-                <option value="" disabled>Select Category</option>
+                <option value="" disabled>Select Category*</option>
                 <option>General Knowledge</option>
                 <option>Philosophy and Psychology</option>
                 <option>Religion</option>
@@ -136,7 +150,7 @@ const AddBook = () => {
               <input
                 className='border rounded-lg w-full p-2'
                 type="text"
-                placeholder="Author"
+                placeholder="Author*"
                 value={newBook.author}
                 required
                 onChange={(e) => setNewBook({...newBook, author: e.target.value})}
@@ -147,7 +161,7 @@ const AddBook = () => {
               <input
                 className='border rounded-lg w-full p-2'
                 type="text"
-                placeholder="Publisher"
+                placeholder="Publisher*"
                 value={newBook.publisher}
                 required
                 onChange={(e) => setNewBook({...newBook, publisher: e.target.value})}
@@ -159,7 +173,7 @@ const AddBook = () => {
                 className='border rounded-lg w-full p-2'
                 type="number"
                 min="0"
-                placeholder="Shelf No."
+                placeholder="Shelf No.*"
                 value={newBook.shelfno}
                 required
                 onChange={(e) => setNewBook({...newBook, shelfno: e.target.value})}
@@ -171,7 +185,7 @@ const AddBook = () => {
                 className='border rounded-lg w-full p-2'
                 type="text"
                 maxLength={13}
-                placeholder="ISBN"
+                placeholder="ISBN*"
                 value={newBook.isbn}
                 required
                 onChange={(e) => setNewBook({...newBook, isbn: e.target.value})}
@@ -186,7 +200,7 @@ const AddBook = () => {
             <button className="bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 transition duration-200" onClick={clearEntries}>
                 Reset
             </button>
-            <button className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-200" onClick={clearEntries}>
+            <button className="bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition duration-200" onClick={cancelFunc}>
                 Cancel
             </button>
           </div>

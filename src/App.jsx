@@ -7,6 +7,8 @@ import AuthorsPage from './steph/AuthorsPageComponents/ShowAllAuthors'  //new fo
 
 
 import AddBook from "./josh/AddBook";
+import UpdateBook from "./josh/UpdateBook";
+import DeleteBook from "./josh/DeleteBook";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
 import AllBooks from "./josh/AllBooks";
@@ -102,6 +104,8 @@ function App() {
         <Route path="/josh/addBook" element={<AddBook />} />
         <Route path="/josh/AddAuthor" element={<Author />} />
         <Route path="/josh/AllBooks" element={<AllBooks />} />
+        <Route path="/josh/UpdateBook/:id" element={<UpdateBook/>} />
+        <Route path="/josh/DeleteBook/:id" element={<DeleteBook/>} />
 
         {!userLoggedIn && (
           <>

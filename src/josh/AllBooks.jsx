@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
 
 
 const AddBook = () => {
 
+  const navigate = useNavigate();
   const [books, setBooks] = useState([]);
   
   const [editBook, setEditBook] = useState(null);
@@ -23,34 +25,31 @@ const AddBook = () => {
       });
   };
 
-  const handleDeleteBook = (id, booktitle) => {
+  // const handleDeleteBook = (id, booktitle) => {
 
-    const delConf = prompt("Enter book title to confirm book deletion (case-sensitive):")
+  //   const delConf = prompt("Enter book title to confirm book deletion (case-sensitive):")
 
-    if(delConf === booktitle){
-      axios.delete(`http://localhost:8000/api/deleteBooks/${id}`)
-        .then(() => {
-        fetchBooks();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-      alert("Book Deletion of "+booktitle+" Successful!")
-    }else{
-      alert("Book Deletion Unsuccessful!")
-    }
+  //   if(delConf === booktitle){
+  //     axios.delete(`http://localhost:8000/api/deleteBooks/${id}`)
+  //       .then(() => {
+  //       fetchBooks();
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  //     alert("Book Deletion of "+booktitle+" Successful!")
+  //   }else{
+  //     alert("Book Deletion Unsuccessful!")
+  //   }
+  // };
+
+  const toUpdateBook = (book) => {
+    navigate(`/josh/UpdateBook/${book._id}`, { state: { book } });
   };
 
-  const handleEditBook = (id) => {
-    axios.put(`http://localhost:8000/api/updateBooks/${id}`, editBook)
-     .then(() => {
-      fetchBooks();
-      setEditBook(null);
-     })
-     .catch((error)=>{
-      console.log(error);
-     });
-  };
+  const toDeleteBook = (book) => {
+    navigate(`/josh/DeleteBook/${book._id}`, { state: { book } });
+  }
 
   return (
     <>
@@ -84,8 +83,8 @@ const AddBook = () => {
                     <td className='py-2 px-4'>{book.shelfno}</td>
                     <td className='py-2 px-4'>{book.isbn}</td>
                     <td className='py-2 px-4'>
-                      <button onClick={() => setEditBook(book)} className="bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-700">EDIT</button>
-                      <button onClick={() => handleDeleteBook(book._id, book.booktitle)} className="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700 ml-2">DELETE</button>
+                      <button onClick={() => toUpdateBook(book)} className="bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-700">EDIT</button>
+                      <button onClick={() => toDeleteBook(book)} className="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700 ml-2">DELETE</button>
                     </td>
                   </tr>
                 ))}
@@ -94,7 +93,7 @@ const AddBook = () => {
           </div>
         </section>
 
-        <section className="container p-5  min-h-screen">
+        {/* <section className="container p-5  min-h-screen">
           {editBook && (
             <div className="container p-5 " >
             <h1 className="text-3xl font-bold mb-6 text-center text-white"> Edit Book</h1>
@@ -205,7 +204,7 @@ const AddBook = () => {
               </div>
             </div>
           )}
-        </section>
+        </section> */}
       </main>
     </>
   );
