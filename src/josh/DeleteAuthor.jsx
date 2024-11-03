@@ -92,7 +92,7 @@ const DeleteAuthor  = () => {
                 className="border rounded-lg w-full p-2 mb-4"
                 placeholder="Author Name"
             />
-            <div className="flex justify-between mt-6">
+            <div className="flex justify-center mt-6">
                 <button 
                     onClick={() => handleDeleteAuthor(deleteAuthor._id, deleteAuthor.name)} 
                     className='bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition'>
