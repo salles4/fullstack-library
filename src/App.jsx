@@ -1,11 +1,8 @@
-import { NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom";
 import Francis from "./cis/Francis";
-
-import HomePage from './steph/HomePageComponents/HomePage/HomePage'
-import BooksPage from './steph/BooksPageComponents/ShowAllBooks' //new for automatic featured books
-import AuthorsPage from './steph/AuthorsPageComponents/ShowAllAuthors'  //new for automatic featured authors
-
-
+import HomePage from './steph/HomePageComponents/HomePage/HomePage';
+import BooksPage from './steph/BooksPageComponents/ShowAllBooks';
+import AuthorsPage from './steph/AuthorsPageComponents/ShowAllAuthors';
 import AddBook from "./josh/AddBook";
 import UpdateBook from "./josh/UpdateBook";
 import DeleteBook from "./josh/DeleteBook";
@@ -14,36 +11,23 @@ import Author from "./josh/AddAuthor";
 import DeleteAuthor from "./josh/DeleteAuthor";
 import UpdateAuthor from "./josh/UpdateAuthor";
 import AllBooks from "./josh/AllBooks";
-
-
-//---------- Kay jerome
 import UserLogin from "./jerome/UserLogin";
 import UserRegister from "./jerome/UserRegister";
-
 import BookCategory from "./jerome/BookCategory";
-
 import SearchTry from "./jerome/SearchTry";
-
-//----------------------------------------------
-
-// new
 import AboutPage from "./steph/AboutPageComponents/AboutPage";
 import BookOverview from './steph/BookOverviewComponents/BookDetails';
 import AuthorOverview from './steph/AuthorOverviewComponents/AuthorDetails';
-
 import ContactUs from './steph/ContactUsPageComponents/ContactUs';
 import { useEffect, useState } from "react";
 import Navbar from "./steph/HomePageComponents/Navbar/Navbar";
 import Error404 from "./cis/Error404";
 
-
-
 function App() {
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, [location]);
 
   const [userLoggedIn, setUserLoggedIn] = useState(null);
@@ -63,13 +47,17 @@ function App() {
     };
   }, []);
 
+  const hideNavbarPaths = ["/jerome/userlogin", "/jerome/userregister"];
+  const showNavbar = !hideNavbarPaths.includes(location.pathname);
 
   return (
     <>
-      <Navbar
-        userLoggedIn={userLoggedIn}
-        handleStorageChange={handleStorageChange}
-      />
+      {showNavbar && (
+        <Navbar
+          userLoggedIn={userLoggedIn}
+          handleStorageChange={handleStorageChange}
+        />
+      )}
       <h1 className="text-white absolute top-0 left-0 z-50">{userLoggedIn}</h1>
       <Routes>
         {!userLoggedIn ? (
@@ -115,4 +103,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

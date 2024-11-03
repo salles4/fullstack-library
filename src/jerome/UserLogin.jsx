@@ -59,38 +59,49 @@ function UserLogin({handleStorageChange}) {
 
     return (
         <>
-            <Link to="/register">GO TO REGISTER</Link>
-            <div>
-                <h2>Login</h2>
+            <div className='bodyCont'>
+                <div className='mainCont'>
+                    
+                    <h2>Login</h2>
 
-                <div>
-                    <input
-                        type='text'
-                        placeholder='Username'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </div>
-                
-                <div>
-                    <input
-                        type='password'
-                        placeholder='Password'
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                
-                <div>
-                    <button onClick={handleLogin}>Login</button>
-                </div>
-                
-                <div>
+                    <div className='inputCont'>
+                        <input
+                            className='inputss'
+                            type='text'
+                            placeholder='Username'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
+                    
+                    <div className='inputCont'>
+                        <input
+                            className='inputss'
+                            type='password'
+                            placeholder='Password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <p className='logreg'>Don&apos;t have an account? <Link to="/jerome/userregister" className='toLink'>Register Here</Link></p>
+                    </div>
+
+                    <div className='errorCont'>
                     {error && <p style={{ color: 'red' }}>{error}</p>}
+                    </div>
+                    
+                    <div className='btnCont'>
+                        <button onClick={handleLogin}>Login</button>
+                    </div>
+                    
+                    
+                    
+                    
                 </div>
                 
+
             </div>
-            
         </>
     );
 }
