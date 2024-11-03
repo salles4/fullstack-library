@@ -15,7 +15,8 @@ const bgImage ={
     backgroundRepeat:"no-repeat",
 };
 
-const Home =()=>{
+const Home =({userLoggedIn})=>{
+    
     return   (
         <main>
             {/* First Section */}
@@ -34,7 +35,7 @@ const Home =()=>{
             </section>
 
             <section><AboutUsSection/></section>
-            <section><AdminSection/></section>
+            {userLoggedIn && <section><AdminSection/></section>}
             <section><BooksSection/></section>
             <section><CategorySection/></section>
             <section><AuthorsSection/></section>

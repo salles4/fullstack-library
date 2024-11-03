@@ -1,4 +1,4 @@
-import { NavLink, Route, Routes, useLocation } from "react-router-dom"
+import { NavLink, Route, Routes, useLocation, useNavigate } from "react-router-dom"
 import Francis from "./cis/Francis";
 
 import HomePage from './steph/HomePageComponents/HomePage/HomePage'
@@ -30,28 +30,27 @@ import AuthorOverview from './steph/AuthorOverviewComponents/AuthorDetails';
 import ContactUs from './steph/ContactUsPageComponents/ContactUs';
 import { useEffect, useState } from "react";
 import Navbar from "./steph/HomePageComponents/Navbar/Navbar";
+import Error404 from "./cis/Error404";
 
 
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0,0)
   }, [location]);
 
-
   const [userLoggedIn, setUserLoggedIn] = useState(null);
+  
+  const handleStorageChange = () => {
+    setUserLoggedIn(localStorage.getItem("username"))
+  };
 
   useEffect(() => {
     const loggedUser = localStorage.getItem("username");
     setUserLoggedIn(loggedUser);
-
-    const handleStorageChange = (event) => {
-      if (event.key === "username") {
-        setUserLoggedIn(event.newValue);
-      }
-    };
 
     window.addEventListener("storage", handleStorageChange);
 
@@ -90,7 +89,10 @@ function App() {
 
       </div>
       <hr /> */}
-      <Navbar />
+      <Navbar
+        userLoggedIn={userLoggedIn}
+        handleStorageChange={handleStorageChange}
+      />
       <h1 className="text-white absolute top-0 left-0 z-50">{userLoggedIn}</h1>
       <Routes>
         <Route path="/josh/AddAuthor" element={<Author />} />
@@ -101,21 +103,32 @@ function App() {
         <Route path="/josh/AddAuthor" element={<Author />} />
         <Route path="/josh/AllBooks" element={<AllBooks />} />
 
-        <Route path="/jerome/userlogin" element={<UserLogin />} />
-        <Route path="/jerome/userregister" element={<UserRegister />} />
+        {!userLoggedIn && (
+          <>
+            <Route
+              path="/jerome/userlogin"
+              element={<UserLogin handleStorageChange={handleStorageChange} />}
+            />
+            <Route path="/jerome/userregister" element={<UserRegister />} />
+          </>
+        )}
         <Route path="/jerome/bookcategory" element={<BookCategory />} />
 
         <Route path="/jerome/searchy" element={<SearchTry />} />
 
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/books" element={<BooksPage />} />
+        <Route
+          path="/home"
+          element={<HomePage userLoggedIn={userLoggedIn} />}
+        />
+        <Route path="/books" element={<BooksPage userLoggedIn={userLoggedIn} />} />
         <Route path="/author" element={<AuthorsPage />} />
 
         <Route path="/about" element={<AboutPage />} />
         <Route path="/book/overview/:id" element={<BookOverview />} />
         <Route path="/author/overview/:id" element={<AuthorOverview />} />
-          
+
         <Route path="/contacts/us" element={<ContactUs />} />
+        <Route path="*" element={<Error404 />} />
       </Routes>
 
       <footer></footer>
