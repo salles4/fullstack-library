@@ -55,8 +55,7 @@ const DeleteBook = () => {
         if(booktitle === delBookTitle){
             axios.delete(`http://localhost:8000/api/deleteBooks/${id}`)
                 .then(() => {
-                    fetchBooks();
-                    navigate('/josh/addBook')
+                    navigate('/home')
                     alert("Book "+booktitle+" has been successfully deleted")
                 })
                 .catch((error) => {
@@ -71,7 +70,7 @@ const DeleteBook = () => {
     };
 
     const cancelBtnFunc = () => {
-        navigate('/josh/addBook');
+        navigate(-1);
     }
 
     return(

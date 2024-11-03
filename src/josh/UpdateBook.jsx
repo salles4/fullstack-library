@@ -56,7 +56,7 @@ const UpdateBook = () => {
          .then(() => {
           fetchBooks();
           alert("Update Successful!")
-          navigate('/josh/addBook')
+          navigate(-1)
         })
          .catch((error)=>{
           console.log(error);
@@ -65,7 +65,7 @@ const UpdateBook = () => {
     };
 
     const cancelBtnFunc = () => {
-        navigate('/josh/addBook');
+        navigate(-1);
     }
 
     return(

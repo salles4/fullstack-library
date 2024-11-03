@@ -53,7 +53,11 @@ function UserLogin({handleStorageChange}) {
         console.log('User logged in successfully');
         handleStorageChange()
         navigate(-1)
-
+        const hideNavbarPaths = ["/jerome/userlogin", "/jerome/userregister"];
+        const showNavbar = hideNavbarPaths.includes(location.pathname);
+        if(showNavbar){
+            navigate("/home")
+        }
 
     };
 
@@ -84,7 +88,7 @@ function UserLogin({handleStorageChange}) {
                         />
                     </div>
                     <div>
-                        <p className='logreg'>Don&apos;t have an account? <Link to="/jerome/userregister" className='toLink'>Register Here</Link></p>
+                        <p className='logreg'>Don&apos;t have an account? <a onClick={(e)=> {e.preventDefault(); navigate("/jerome/userregister", { replace: true });}} className='toLink cursor-pointer'>Register Here</a></p>
                     </div>
 
                     <div className='errorCont'>

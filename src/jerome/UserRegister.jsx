@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 
 function UserRegister(){
+    const navigate = useNavigate();
 
     //------------- create and store into object all the user's data
     const [newUser, setNewUser] = useState({})
@@ -115,7 +116,7 @@ function UserRegister(){
                         />
                     </div>
 
-                    <p className='logreg'>Already have an account? <Link to={"/jerome/userlogin"} className='toLink'>Login Here</Link></p>
+                    <p className='logreg'>Already have an account? <a onClick={(e)=> {e.preventDefault(); navigate("/jerome/userlogin", {replace: true})}} className='toLink cursor-pointer'>Login Here</a></p>
                     <div className='errorCont'>
                         {error && <p style={{ color: 'red' }}>{error}</p>}
                     </div>

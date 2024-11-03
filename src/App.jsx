@@ -58,7 +58,7 @@ function App() {
           handleStorageChange={handleStorageChange}
         />
       )}
-      <h1 className="text-white absolute top-0 left-0 z-50">{userLoggedIn}</h1>
+      {/* <h1 className="text-white absolute top-0 left-0 z-50">{userLoggedIn}</h1> */}
       <Routes>
         {!userLoggedIn ? (
           <>
@@ -79,6 +79,7 @@ function App() {
           </>
         }
 
+        <Route path="/" element={<HomePage userLoggedIn={userLoggedIn} />} />
         <Route path="/home" element={<HomePage userLoggedIn={userLoggedIn} />} />
 
         <Route path="/books" element={<BooksPage />} />
@@ -93,7 +94,7 @@ function App() {
 
         {/* Unused Routes */}
         <Route path="/josh/AllBooks" element={<AllBooks />} />
-        <Route path="/jerome/searchy" element={<SearchTry />} />
+        <Route path="/jerome/searchy/:query" element={<SearchTry />} />
 
         <Route path="*" element={<Error404 />} />
       </Routes>
