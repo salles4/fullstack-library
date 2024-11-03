@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Books(props) {
   return (
     <Link className='text-black' to={`/book/overview/${props.id}`}>
-      <div className='shadow-lg rounded-lg bg-gray-50 border border-gray-200 hover:bg-red-950 group mb-3 hover:scale-105 duration-200'>
+      <div className='shadow-lg rounded-lg bg-gray-50 border border-gray-200 hover:bg-gradient-to-r from-red-950 to-red-800  group mb-3 hover:scale-105 duration-200'>
         <div key={props.key}>
           <div className='relative h-[300px] overflow-hidden'>
             <img

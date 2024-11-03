@@ -87,7 +87,7 @@ const UpdateAuthor = () => {
                             className="border rounded-lg w-full p-2 mb-4"
                         />
                         
-                        <div className="flex justify-between mt-4">
+                        <div className="flex justify-center mt-4">
                             <button 
                                 onClick={handleEditAuthor} 
                                 className='bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition'>

@@ -95,4 +95,9 @@ export const responsive = {
     }
   ]
     
-
+  export const infoSlides = [
+    { info: "Explore our extensive collection of books across various genres." },
+    { info: "Join our community to share and discuss your favorite reads." },
+    { info: "Get personalized recommendations based on your reading history." },
+    { info: "Stay updated with the latest book releases and events." },
+];

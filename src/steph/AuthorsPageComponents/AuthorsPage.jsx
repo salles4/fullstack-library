@@ -71,11 +71,11 @@ const BooksPage = ({authors}) => {
                       <div className='text-md text-ellipsis overflow-hidden sm:text-center md:text-start mt-2 '>
                       <p className='opacity-60 mb-5'>{author.bio}</p>                       
                     </div>
-                    <button className='bg-red-950 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 text-white' > 
-                      <Link to={`/author/overview/${author._id}`} className='flex items-center gap-3 text-white'>
-                        Show Details
-                        <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <button className='bg-gradient-to-r from-red-950 to-red-700 transition-all duration-200 text-white px-4 py-2 rounded-full  flex items-center gap-1 group hover:scale-105'>
+                    <Link to={`/author/overview/${author._id}`} className='flex items-center gap-3 text-white'>
+                    <span className='block transition-all duration-200'>Show Details</span>
+                    <svg className='hidden group-hover:block transition-all duration-200 ml-2' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </Link>

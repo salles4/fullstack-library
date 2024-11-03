@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import BackIcon from './logo.svg';
-
+import { IoPersonSharp } from "react-icons/io5";
 
 
 const Navbar = ({userLoggedIn, handleStorageChange}) => {
@@ -62,9 +62,10 @@ const Navbar = ({userLoggedIn, handleStorageChange}) => {
             :
             (<div className='text-white'>
               <Link to={"/jerome/userlogin"}>
-                <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'>
-                  Log In
-                </button>
+                <button className='bg-gradient-to-r from-red-400 to-red-700 transition-all duration-200 text-white py-1 px-4 rounded-full flex items-center gap-3 group'>
+                  <span className='group-hover:block hidden transition-all duration-200'>Log In</span>
+                  <IoPersonSharp className='text-xl text-white drop-shadow-md cursor-pointer'/>
+                  </button>
               </Link>
             </div>)
           }

@@ -19,13 +19,13 @@ const AboutUsSection = () => {
             <div className='mb-5 opacity-60 p-3'> {aboutus[0].aboutUs} 
             </div>
 
-            <Link to={"/about"}>  
-              <button className='bg-red-950 px-4 py-2 rounded-full m-3 hover:scale-105 duration-200 flex items-center gap-3 text-white' > 
-                Show More
-                    <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
+            <Link to={"/about"}>
+              <button className='bg-gradient-to-r from-red-950 to-red-700 transition-all duration-200 text-white px-4 py-2 rounded-full m-3 flex items-center gap-1 group hover:scale-105'>
+                <span className='block transition-all duration-200'>Show More</span>
+                <svg className='hidden group-hover:block transition-all duration-200 ml-2' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </button>
             </Link>
           </div>

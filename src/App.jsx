@@ -22,6 +22,7 @@ import ContactUs from './steph/ContactUsPageComponents/ContactUs';
 import { useEffect, useState } from "react";
 import Navbar from "./steph/HomePageComponents/Navbar/Navbar";
 import Error404 from "./cis/Error404";
+import TestSlider from "./steph/HomePageComponents/HomePage/TestSlider";
 
 function App() {
   const location = useLocation();
@@ -98,6 +99,9 @@ function App() {
         <Route path="/jerome/searchy" element={<SearchTry />} />
 
         <Route path="*" element={<Error404 />} />
+
+        <Route path="/test" element={<TestSlider />} />
+
       </Routes>
 
       <footer></footer>
