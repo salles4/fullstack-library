@@ -1,7 +1,10 @@
 import React from 'react';
 import bgImagee from "../AboutPageComponents/aboutUs2.png";
 import bgImagee2 from "../AboutPageComponents/bgg.png";
-
+import devImage1 from "../AboutPageComponents/steph.jpg"; 
+import devImage2 from "../AboutPageComponents/salles.png";
+import devImage3 from "../AboutPageComponents/josh.png"; 
+import devImage4 from "../AboutPageComponents/virgo.png";
 
 import Footer from '../HomePageComponents/Footer/Footer';
 
@@ -17,26 +20,26 @@ const AboutPage = () => {
     {
       name: "Stephanie Joyce A. Guce",
       role: "Frontend Developer",
-      img: "/path/to/alice.jpg",
-      description: "Passionate about creating seamless user experiences and beautiful interfaces."
+      img: devImage1,
+      description: "hahaha"
     },
     {
       name: "Francis James Salles",
       role: "Full Stack Developer",
-      img: "/path/to/bob.jpg",
-      description: "Expert in server-side technologies and ensuring robust application performance."
+      img: devImage2,
+      description: "full stack"
     },
     {
       name: "Jerome Bryan Virgo",
       role: "Backend Developer",
-      img: "/path/to/charlie.jpg",
-      description: "Loves building comprehensive solutions that bridge frontend and backend."
+      img: devImage3,
+      description: "full stuck"
     },
     {
       name: "Joshua Victor Imperial",
       role: "Backend Developer",
-      img: "/path/to/dana.jpg",
-      description: "Dedicated to crafting intuitive and engaging user experiences."
+      img: devImage4,
+      description: "saling kitkit"
     }
   ];
 
@@ -112,19 +115,12 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Additional Features Section */}
-        <section className="py-10 text-black text-center">
-          <div className='container mx-auto'>
-            <h1 className='text-3xl font-bold mb-5'>Additional Features</h1>
-          </div>
-        </section>
-
-        {/* Additional Features Section */}
+        {/* Additional Features Section
         <section className="py-10 text-black text-center">
           <div className="container mx-auto">
             <h1 className="text-3xl font-bold mb-5">Additional Features</h1>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer/>
     </>

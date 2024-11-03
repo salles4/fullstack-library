@@ -84,7 +84,9 @@ function App() {
 
         <Route path="/books" element={<BooksPage />} />
         <Route path="/author" element={<AuthorsPage />} />
+        <Route path="/jerome/bookcategory/:category" element={<BookCategory />} />
         <Route path="/jerome/bookcategory" element={<BookCategory />} />
+
 
         <Route path="/book/overview/:id" element={<BookOverview userLoggedIn={userLoggedIn} />} />
         <Route path="/author/overview/:id" element={<AuthorOverview userLoggedIn={userLoggedIn} />} />

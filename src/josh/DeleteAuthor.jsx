@@ -2,7 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; 
 import { useParams, useLocation } from 'react-router-dom';
+import bgImagee2 from "../steph/AboutPageComponents/bgg.png";
 
+const bgImage2 = {
+    backgroundImage: `url(${bgImagee2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+};
 const DeleteAuthor  = () => {
 
     const [delAuthorName, getAuthorName] = useState('');
@@ -73,16 +80,32 @@ const DeleteAuthor  = () => {
     }
 
     return(
-        <div>
-            <h1>AUTHOR DELETION</h1>
-            <label>{`Enter author name "${deleteAuthor.name}" to confirm deletion`}</label>
+        <main style={bgImage2} className="min-h-screen flex items-center justify-center">
+        <div className='bg-white p-6 rounded-lg shadow-lg max-w-md w-full'>
+            <h1 className="text-2xl font-bold mb-4 text-center">Author Deletion</h1>
+            <p className="mb-4 text-gray-700">
+                {`Enter author name "${deleteAuthor.name}" to confirm deletion:`}
+            </p>
             <input
                 type="text"
-                onChange={(e) => {getAuthorName(e.target.value)}}
+                onChange={(e) => getAuthorName(e.target.value)}
+                className="border rounded-lg w-full p-2 mb-4"
+                placeholder="Author Name"
             />
-            <button onClick={() => handleDeleteAuthor(deleteAuthor._id, deleteAuthor.name)}>Delete</button>
-            <button onClick={cancelBtnFunc}>Cancel</button>
+            <div className="flex justify-between mt-6">
+                <button 
+                    onClick={() => handleDeleteAuthor(deleteAuthor._id, deleteAuthor.name)} 
+                    className='bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition'>
+                    Delete
+                </button>
+                <button 
+                    onClick={cancelBtnFunc} 
+                    className='bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 transition'>
+                    Cancel
+                </button>
+            </div>
         </div>
+    </main>
     )
 }
 
