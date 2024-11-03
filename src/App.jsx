@@ -47,7 +47,7 @@ function App() {
   const [userLoggedIn, setUserLoggedIn] = useState(null);
   
   const handleStorageChange = () => {
-    setUserLoggedIn(localStorage.getItem("username"))
+    setUserLoggedIn(localStorage.getItem("username") || null)
   };
 
   useEffect(() => {
