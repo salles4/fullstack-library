@@ -1,106 +1,109 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; 
-import { useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import bgImagee2 from "../steph/AboutPageComponents/bgg.png";
+
+const bgImage2 = {
+    backgroundImage: `url(${bgImagee2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+};
 
 const UpdateAuthor = () => {
-
     const navigate = useNavigate();
-    const [author, setAuthor] = useState([]);
-
     const { id } = useParams();
-
     const location = useLocation();
     const [editAuthor, setEditAuthor] = useState(location.state?.author || null);
 
     useEffect(() => {
         const fetchAuthorDetails = async () => {
-            try{
+            try {
                 const response = await axios.get(`http://localhost:8000/api/getAuthors/${id}`);
-                console.log(response.data);
                 setEditAuthor(response.data);
-            }catch(error){
+            } catch (error) {
                 console.error("Error fetching author details", error);
-                alert("Failed to get author details :(")
+                alert("Failed to get author details :(");
             }
         };
-    }, [id, editAuthor]);
 
-    useEffect(() => {
-        fetchAuthors();
-    }, []);
+        if (id) fetchAuthorDetails();
+    }, [id]);
 
-    const fetchAuthors = () => {
-        axios.get("http://localhost:8000/api/getAuthors")
-         .then((response) => {
-            console.log(response.data);
-            setAuthor(response.data);
-         })
-         .catch((error)=> {
-            console.log(error);
-         });
-    };
-
-    const handleEditAuthor = (id) => {
-        axios.put(`http://localhost:8000/api/updateAuthors/${id}`, editAuthor)
-         .then(() => {
-            fetchAuthors();
-            alert("Update Successful!")
-            navigate(`/author/overview/${id}`)
-         })
-         .catch((error)=>{
-            console.log(error);
-            alert("Update Unsuccessfull!")
-         });
+    const handleEditAuthor = async () => {
+        try {
+            await axios.put(`http://localhost:8000/api/updateAuthors/${id}`, editAuthor);
+            alert("Update Successful!");
+            navigate(`/author/overview/${id}`);
+        } catch (error) {
+            console.error(error);
+            alert("Update Unsuccessful!");
+        }
     };
 
     const cancelBtnFunc = () => {
-        navigate(`/author/overview/${id}`)
-    }
+        navigate(`/author/overview/${id}`);
+    };
 
-    return(
-        <div>
-            <h1>EDIT AUTHOR</h1>
-            {editAuthor && (
-                <div>
-                    <div>
-                        <label>Author Name</label>
+    return (
+        <main style={bgImage2} className="min-h-screen flex items-center justify-center">
+            <section className='container p-5 max-w-[800px] w-full bg-white rounded-lg shadow-lg'>
+                <h1 className="text-3xl font-bold mb-6 text-center text-gray-800 mt-10">Update Author</h1>
+                {editAuthor && (
+                    <div className="p-6">
+                        <label className="block mb-2 font-medium">Author Name</label>
                         <input
                             type="text"
-                            placeholder="Author Name"
+                            placeholder="Author Name*"
                             value={editAuthor.name}
-                            onChange={(e) => setEditAuthor({...editAuthor, name: e.target.value})}
+                            required
+                            onChange={(e) => setEditAuthor({ ...editAuthor, name: e.target.value })}
+                            className="border rounded-lg w-full p-2 mb-4"
                         />
-                        <label>Author Bio</label>
+                        
+                        <label className="block mb-2 font-medium">Author Bio</label>
                         <textarea
-                            type="text"
                             placeholder='Author Bio'
                             value={editAuthor.bio}
-                            onChange={(e) => setEditAuthor({...editAuthor, bio: e.target.value})}
+                            onChange={(e) => setEditAuthor({ ...editAuthor, bio: e.target.value })}
+                            className="border rounded-lg w-full p-2 mb-4"
                         />
-                        <label>Author Link</label>
+                        
+                        <label className="block mb-2 font-medium">Author Link</label>
                         <input
                             type="text"
                             placeholder="Author Link"
                             value={editAuthor.link}
-                            onChange={(e) => setEditAuthor({...editAuthor, link: e.target.value})}
+                            onChange={(e) => setEditAuthor({ ...editAuthor, link: e.target.value })}
+                            className="border rounded-lg w-full p-2 mb-4"
                         />
-                        <label>Author Picture</label>
+                        
+                        <label className="block mb-2 font-medium">Author Picture</label>
                         <input
                             type="text"
-                            placeholder="Author Picture"
+                            placeholder="Author Picture URL"
                             value={editAuthor.picture}
-                            onChange={(e) => setEditAuthor({...editAuthor, picture: e.target.value})}
+                            onChange={(e) => setEditAuthor({ ...editAuthor, picture: e.target.value })}
+                            className="border rounded-lg w-full p-2 mb-4"
                         />
+                        
+                        <div className="flex justify-between mt-4">
+                            <button 
+                                onClick={handleEditAuthor} 
+                                className='bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition'>
+                                Update
+                            </button>
+                            <button 
+                                onClick={cancelBtnFunc} 
+                                className='bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 transition'>
+                                Cancel
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <button onClick={() => handleEditAuthor(editAuthor._id)}>Update</button>
-                        <button onClick={cancelBtnFunc}>Cancel</button>
-                    </div>
-                </div>
-            )}
-        </div>
-    )
-}
+                )}
+            </section>
+        </main>
+    );
+};
 
-export default UpdateAuthor
+export default UpdateAuthor;

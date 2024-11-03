@@ -33,7 +33,7 @@ const SuggestedBooks = ({ authorName }) => {
   }, [books, authorName]);
 
   return (
-    <div className='container'>
+    <div className='container mx-auto my-10 p-6 bg-gray-50 rounded-lg shadow-md'>
       <div className='text-center font-bold text-3xl mt-10 mb-10'>
       <h1>More From This Author</h1>
       </div>
@@ -45,7 +45,7 @@ const SuggestedBooks = ({ authorName }) => {
                 <img 
                   src={book.bookcover} 
                   alt={`${book.booktitle} cover`} 
-                  className="w-full h-auto object-contain" 
+                  className="w-full h-60 object-contain" 
                 />
                 <div className="p-4 text-black text-center group-hover:text-white">
                   <h3 className="text-lg font-bold group-hover:text-white">{book.booktitle}</h3>

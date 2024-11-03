@@ -140,4 +140,4 @@ const getAuthorsByID =(req, res ) =>{
     });
 }
 
-module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, updateAuthors, deleteAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID, getAuthorsByID };
+module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, updateAuthors, deleteAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID, getAuthorsByID};

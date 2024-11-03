@@ -76,7 +76,8 @@ const DeleteBook = () => {
 
     return(
         <>
-            <h1>BOOK DELETION</h1>
+        <div className='container'>
+        <h1>BOOK DELETION</h1>
             <label>{`Enter book title "${deleteBook.booktitle}" to confirm deletion`}</label>
             <input
                 type="text"
@@ -84,6 +85,10 @@ const DeleteBook = () => {
             />
             <button onClick={() => handleDeleteBook(deleteBook._id, deleteBook.booktitle)}>Delete</button>
             <button onClick={cancelBtnFunc}>Cancel</button>
+
+
+        </div>
+            
         </>
     )
 }

@@ -75,7 +75,7 @@ const BooksSection = () => {
   ));
       
   return (
-    <div className='min-h-[300px] py-10 bg-gray-50 mt-5'>
+    <div className='min-h-[300px] py-10 bg-gray-50'>
       <div className='container mx-auto px-4'>
       {/* Header */}
       <div className='text-center mb-5'>

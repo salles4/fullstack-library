@@ -1,5 +1,5 @@
 import SuggestedBooks from '../BookOverviewComponents/SuggestedBooks';
-import { useParams } from 'react-router-dom';
+import { useParams , useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Footer from '../HomePageComponents/Footer/Footer';
@@ -20,7 +20,15 @@ const BookDetails = ({userLoggedIn}) => {
         console.log(error);
       });
   }, [id]);
+  const navigate = useNavigate();
 
+  const toDeleteBooks = (book) => {
+    navigate(`/josh/DeleteBook/${book._id}`, { state: { book } });
+  }
+
+  const toUpdateBook = (book) => {
+    navigate(`/josh/UpdateBook/${book._id}`, { state: { book } });
+  }
 
   return (
     <>
@@ -42,8 +50,8 @@ const BookDetails = ({userLoggedIn}) => {
 
               {userLoggedIn && 
               <div className='text-end mt-10'>
-                <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Edit</button>
-                <button className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition ml-2'>Delete</button>
+                <button onClick={() => toUpdateBook(book)}  className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Edit</button>
+                <button onClick={() => toDeleteBooks(book)} className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition ml-2'>Delete</button>
               </div>
               }
             </div>
