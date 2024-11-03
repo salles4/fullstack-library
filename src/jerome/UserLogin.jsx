@@ -52,7 +52,7 @@ function UserLogin({handleStorageChange}) {
         setError('');
         console.log('User logged in successfully');
         handleStorageChange()
-        navigate("/home")
+        navigate(-1)
 
 
     };

@@ -66,76 +66,47 @@ function App() {
 
   return (
     <>
-      {/* <div className="flex justify-center items-center gap-4 text-xl py-3">
-        
-        <NavLink to="/josh/addBook">Add Book</NavLink>
-        <NavLink to="/josh/AddAuthor">Add Author</NavLink>
-        <NavLink to="/josh/AllBooks">All Books</NavLink>
-        
-        <NavLink to="/jerome/userlogin">Login</NavLink>
-        <NavLink to="/jerome/userregister">Register</NavLink>
-
-        <NavLink to="/jerome/bookcategory">BookCategory</NavLink>
-
-       
-          <NavLink to="/jerome/searchy">Searchy</NavLink>
-        
-
-        <NavLink to="/home">Home</NavLink>
-        <NavLink to="/books">Books</NavLink>
-        <NavLink to="/author">Author</NavLink>
-
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/book/overview">BookOverview</NavLink>
-        <NavLink to="/author/overview">AuthorOverview</NavLink>
-
-        <NavLink to="/contacts/us">ContactUs</NavLink>
-
-      </div>
-      <hr /> */}
       <Navbar
         userLoggedIn={userLoggedIn}
         handleStorageChange={handleStorageChange}
       />
       <h1 className="text-white absolute top-0 left-0 z-50">{userLoggedIn}</h1>
       <Routes>
-        <Route path="/josh/AddAuthor" element={<Author />} />
-        <Route path="/jerome" element={<Jerome />} />
-        <Route path="/cis" element={<Francis />} />
-
-        <Route path="/josh/addBook" element={<AddBook />} />
-        <Route path="/josh/AddAuthor" element={<Author />} />
-        <Route path="/josh/AllBooks" element={<AllBooks />} />
-        <Route path="/josh/UpdateBook/:id" element={<UpdateBook/>} />
-        <Route path="/josh/DeleteBook/:id" element={<DeleteBook/>} />
-        <Route path="/josh/DeleteAuthor/:id" element={<DeleteAuthor/>} />
-        <Route path="/josh/UpdateAuthor/:id" element={<UpdateAuthor/>} />
-
-        {!userLoggedIn && (
+        {!userLoggedIn ? (
           <>
-            <Route
-              path="/jerome/userlogin"
-              element={<UserLogin handleStorageChange={handleStorageChange} />}
+            {/* Guest Routes */}
+            <Route path="/jerome/userlogin" element={<UserLogin handleStorageChange={handleStorageChange} />}
             />
             <Route path="/jerome/userregister" element={<UserRegister />} />
           </>
-        )}
+          ):
+          <>
+            {/* Admin Routes */}
+            <Route path="/josh/AddAuthor" element={<Author />} />
+            <Route path="/josh/addBook" element={<AddBook />} />
+            <Route path="/josh/UpdateBook/:id" element={<UpdateBook/>} />
+            <Route path="/josh/DeleteBook/:id" element={<DeleteBook/>} />
+            <Route path="/josh/DeleteAuthor/:id" element={<DeleteAuthor/>} />
+            <Route path="/josh/UpdateAuthor/:id" element={<UpdateAuthor/>} />
+          </>
+        }
+
+        <Route path="/home" element={<HomePage userLoggedIn={userLoggedIn} />} />
+
+        <Route path="/books" element={<BooksPage />} />
+        <Route path="/author" element={<AuthorsPage />} />
         <Route path="/jerome/bookcategory" element={<BookCategory />} />
 
-        <Route path="/jerome/searchy" element={<SearchTry />} />
-
-        <Route
-          path="/home"
-          element={<HomePage userLoggedIn={userLoggedIn} />}
-        />
-        <Route path="/books" element={<BooksPage userLoggedIn={userLoggedIn} />} />
-        <Route path="/author" element={<AuthorsPage />} />
+        <Route path="/book/overview/:id" element={<BookOverview userLoggedIn={userLoggedIn} />} />
+        <Route path="/author/overview/:id" element={<AuthorOverview userLoggedIn={userLoggedIn} />} />
 
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/book/overview/:id" element={<BookOverview />} />
-        <Route path="/author/overview/:id" element={<AuthorOverview />} />
+        <Route path="/contacts/us" element={<ContactUs userLoggedIn={userLoggedIn}/>} />
 
-        <Route path="/contacts/us" element={<ContactUs />} />
+        {/* Unused Routes */}
+        <Route path="/josh/AllBooks" element={<AllBooks />} />
+        <Route path="/jerome/searchy" element={<SearchTry />} />
+
         <Route path="*" element={<Error404 />} />
       </Routes>
 
