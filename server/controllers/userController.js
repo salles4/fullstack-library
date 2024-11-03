@@ -61,6 +61,23 @@ const createAuthors = (req,res) => {
      });
 };
 
+const deleteAuthors = (req,res) => {
+    AuthorModel.findByIdAndDelete(req.params.id)
+     .then(() => res.json({message: "Author Deleted"}))
+     .catch(err => {
+        console.error(err);
+        res.status(500).json({error:"Internal Server Error"})
+     })
+}
+
+const updateAuthors = (req, res) => {
+    AuthorModel.findByIdAndUpdate(req.params.id, req.body, {new:true})
+     .then(author => res.json(author))
+     .catch(err => {
+        console.log(err);
+        res.status(500).json({error: "Internal Server Error"});
+     });
+};
 
 // -------------- FOR USERS
 const getUsers = (req, res) => {
@@ -123,4 +140,4 @@ const getAuthorsByID =(req, res ) =>{
     });
 }
 
-module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID, getAuthorsByID };
+module.exports = { getBooks, createBooks, updateBooks, deleteBooks, getAuthors, createAuthors, updateAuthors, deleteAuthors, getUsers, createUser, getContacts, createContacts, getBooksByID, getAuthorsByID };

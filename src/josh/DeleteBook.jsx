@@ -42,11 +42,7 @@ const DeleteBook = () => {
              console.log(error);
          });
     };
-
-    if(delBookTitle === deleteBook.booktitle){
-
-    }
-
+    
     const handleDeleteBook = (id, booktitle) => {
 
         console.log(booktitle)

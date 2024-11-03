@@ -11,6 +11,8 @@ import UpdateBook from "./josh/UpdateBook";
 import DeleteBook from "./josh/DeleteBook";
 import Jerome from "./jerome/Jerome";
 import Author from "./josh/AddAuthor";
+import DeleteAuthor from "./josh/DeleteAuthor";
+import UpdateAuthor from "./josh/UpdateAuthor";
 import AllBooks from "./josh/AllBooks";
 
 
@@ -106,6 +108,8 @@ function App() {
         <Route path="/josh/AllBooks" element={<AllBooks />} />
         <Route path="/josh/UpdateBook/:id" element={<UpdateBook/>} />
         <Route path="/josh/DeleteBook/:id" element={<DeleteBook/>} />
+        <Route path="/josh/DeleteAuthor/:id" element={<DeleteAuthor/>} />
+        <Route path="/josh/UpdateAuthor/:id" element={<UpdateAuthor/>} />
 
         {!userLoggedIn && (
           <>
