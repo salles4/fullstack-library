@@ -9,6 +9,9 @@ router.put('/updateBooks/:id', userController.updateBooks);
 
 router.get('/getAuthors', userController.getAuthors);
 router.post('/createAuthors', userController.createAuthors);
+router.delete('/deleteAuthors/:id', userController.deleteAuthors);
+router.put('/updateAuthors/:id', userController.updateAuthors);
+
 
 router.get('/getUsers', userController.getUsers);
 router.post('/createUser', userController.createUser);
