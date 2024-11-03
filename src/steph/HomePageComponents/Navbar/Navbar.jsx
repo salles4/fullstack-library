@@ -50,7 +50,6 @@ const Navbar = ({userLoggedIn, handleStorageChange}) => {
             </div>
           </div>
           {userLoggedIn ? 
-            <Link to={"/jerome/userlogin"}>
               (<div className='text-white'>
                   <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'
                   onClick={() => {
@@ -60,7 +59,6 @@ const Navbar = ({userLoggedIn, handleStorageChange}) => {
                     Log Out
                   </button>
               </div>)
-            </Link>
             :
             (<div className='text-white'>
               <Link to={"/jerome/userlogin"}>
