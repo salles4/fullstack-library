@@ -43,81 +43,91 @@ function UserRegister(){
 
     return(
         <>
-            <Link to={"/login"}>GO TO LOGIN</Link>
+            <div className='bodyCont'>
             
-            <div>
+                <div className='mainContReg'>
 
-                <h2>CREATE USER</h2>
+                
+                    <h2>Registration</h2>
+                    <div>
+                        <input 
+                            className='inputss'
+                            type='text'
+                            placeholder='First Name'
+                            value={newUser.firstName}
+                            onChange={(e) => setNewUser({...newUser, firstName:e.target.value})}
+                            required
+                        />
+                    </div>
+                    
+                    <div>
+                        <input
+                            className='inputss' 
+                            type='text'
+                            placeholder='Last Name'
+                            value={newUser.lastName}
+                            onChange={(e) => setNewUser({...newUser, lastName:e.target.value})}
+                            required
+                        />
+                    </div>
+                    
+                    <div>
+                        <input 
+                            className='inputss'
+                            type='text'
+                            placeholder='Username'
+                            value={newUser.username}
+                            onChange={(e) => setNewUser({...newUser, username:e.target.value})}
+                            required
+                        />
+                    </div>
+                    
+                    <div>
+                        <input 
+                            className='inputss'
+                            type='email'
+                            placeholder='Email'
+                            value={newUser.email}
+                            onChange={(e) => setNewUser({...newUser, email:e.target.value})}
+                            required
+                        />
+                    </div>
+                    
+                    <div>
+                        <input 
+                            className='inputss'
+                            type='password'
+                            placeholder='Password'
+                            value={newUser.password}
+                            onChange={(e) => setNewUser({...newUser, password:e.target.value})}
+                            required
+                        />
+                    </div>
+                    
+                    <div>
+                        <input
+                            className='inputss' 
+                            type='password'
+                            placeholder='Re-type Password'
+                            value={repass}
+                            onChange={(e) => setRepass(e.target.value)}
+                            required
+                        />
+                    </div>
 
-                <div>
-                    <input 
-                        type='text'
-                        placeholder='First Name'
-                        value={newUser.firstName}
-                        onChange={(e) => setNewUser({...newUser, firstName:e.target.value})}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <input 
-                        type='text'
-                        placeholder='Last Name'
-                        value={newUser.lastName}
-                        onChange={(e) => setNewUser({...newUser, lastName:e.target.value})}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <input 
-                        type='text'
-                        placeholder='Username'
-                        value={newUser.username}
-                        onChange={(e) => setNewUser({...newUser, username:e.target.value})}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <input 
-                        type='email'
-                        placeholder='Email'
-                        value={newUser.email}
-                        onChange={(e) => setNewUser({...newUser, email:e.target.value})}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <input 
-                        type='password'
-                        placeholder='Password'
-                        value={newUser.password}
-                        onChange={(e) => setNewUser({...newUser, password:e.target.value})}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <input 
-                        type='password'
-                        placeholder='Re-type Password'
-                        value={repass}
-                        onChange={(e) => setRepass(e.target.value)}
-                        required
-                    />
-                </div>
-                
-                <div>
-                    <button onClick={handleCreateUser}>Create</button>
-                </div>
-                
-                <div>
-                    {error && <p style={{ color: 'red' }}>{error}</p>}
-                </div>
-                
+                    <p className='logreg'>Already have an account? <Link to={"/jerome/userlogin"} className='toLink'>Login Here</Link></p>
+                    <div className='errorCont'>
+                        {error && <p style={{ color: 'red' }}>{error}</p>}
+                    </div>
+                    
+                    <div className='btnCont'>
+                        <button onClick={handleCreateUser}>Create</button>
+                    </div>
+                    
+                    
+                    
 
+                </div>
             </div>
         </>
     )

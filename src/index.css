@@ -315,6 +315,20 @@ td img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a{
   @apply text-red-600 font-semibold;
 }
@@ -365,3 +379,71 @@ width: 40px;
 height: 40px;
 }
 
+
+
+
+
+
+/* --------------- CSS FOR LOG IN -------------- */
+
+.bodyCont{
+  width: 100vw;
+  height: 100vh;
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.mainContReg{
+  width: 40%;
+  height: 55%;
+  background-color: rgb(79, 180, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.mainCont{
+  width: 40%;
+  height: 45%;
+  background-color: rgb(79, 180, 238);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mainCont h2{
+  text-align: center;
+}
+
+.inputCont{
+  margin-top: 10px;
+}
+
+.btnCont{
+  margin-top: 20px;
+}
+
+.inputss{
+  width: 15vw;
+  height: 4vh;
+}
+
+.errorCont{
+  margin-top: 20px;
+}
+
+.logreg{
+  font-size: 12px;
+}
+.toLink{
+  color: rgb(76, 104, 230);
+}
+
+/* --------------- CSS FOR ENDS HERE LOG IN -------------- */
