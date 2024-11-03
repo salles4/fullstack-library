@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-function UserLogin() {
+function UserLogin({handleStorageChange}) {
     //----- get all users in the database
     const [users, setUsers] = useState([]);
 
@@ -27,6 +27,7 @@ function UserLogin() {
         fetchUsers();
     }, []);
 
+    const navigate = useNavigate();
 
     function handleLogin() {
 
@@ -50,6 +51,8 @@ function UserLogin() {
         setPassword('')
         setError('');
         console.log('User logged in successfully');
+        handleStorageChange()
+        navigate("/home")
 
 
     };

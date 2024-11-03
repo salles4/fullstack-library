@@ -6,7 +6,7 @@ import Footer from '../HomePageComponents/Footer/Footer';
 
 
 
-const BookDetails = () => {
+const BookDetails = ({userLoggedIn}) => {
   const { id } = useParams(); 
   const [book, setBook] = useState({});
 
@@ -40,11 +40,12 @@ const BookDetails = () => {
                   <p className="text-lg"><strong>Description:</strong> </p>
                   <p>{book.bookdesc}</p>
 
-                  
+              {userLoggedIn && 
               <div className='text-end mt-10'>
                 <button className='bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition'>Edit</button>
                 <button className='bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition ml-2'>Delete</button>
               </div>
+              }
             </div>
 
             {/* Book Cover */}

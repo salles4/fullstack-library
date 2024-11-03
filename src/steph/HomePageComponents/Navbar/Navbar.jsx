@@ -4,7 +4,7 @@ import BackIcon from './logo.svg';
 
 
 
-const Navbar = () => {
+const Navbar = ({userLoggedIn, handleStorageChange}) => {
   const navigate = useNavigate(); 
 
   const handleBack = () => {
@@ -49,15 +49,25 @@ const Navbar = () => {
               <button type="submit" className="text-white focus:outline-none font-medium rounded-xl text-sm px-4">Search</button>
             </div>
           </div>
-
-          {/* Account Button */}
-            <div className='text-white'>
+          {userLoggedIn ? 
+            (<div className='text-white'>
+                <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'
+                onClick={() => {
+                  localStorage.removeItem("username")
+                  handleStorageChange()
+                  }}>
+                  Log Out
+                </button>
+            </div>)
+            :
+            (<div className='text-white'>
               <Link to={"/jerome/userlogin"}>
                 <button className='px-4 py-2 rounded-full bg-white text-red-950 hover:bg-gray-100 duration-200'>
-                  Account
+                  Log In
                 </button>
               </Link>
-            </div>
+            </div>)
+          }
         </div>
       </div>
     </nav>
