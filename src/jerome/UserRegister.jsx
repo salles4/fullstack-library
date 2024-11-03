@@ -3,6 +3,15 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 
+import bgImagee2 from "../steph/AboutPageComponents/bgg.png";
+
+const bgImage2 = {
+    backgroundImage: `url(${bgImagee2})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+};
+
 
 function UserRegister(){
     const navigate = useNavigate();
@@ -44,92 +53,95 @@ function UserRegister(){
 
     return(
         <>
-            <div className='bodyCont'>
-            
-                <div className='mainContReg'>
+           <main  style={bgImage2}  className="min-h-screen w-full flex items-center justify-center bg-gray-100">
+           <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+                <h2 className="text-2xl font-bold text-center mb-6">Registration</h2>
 
-                
-                    <h2>Registration</h2>
-                    <div>
-                        <input 
-                            className='inputss'
-                            type='text'
-                            placeholder='First Name'
-                            value={newUser.firstName}
-                            onChange={(e) => setNewUser({...newUser, firstName:e.target.value})}
-                            required
-                        />
-                    </div>
-                    
-                    <div>
-                        <input
-                            className='inputss' 
-                            type='text'
-                            placeholder='Last Name'
-                            value={newUser.lastName}
-                            onChange={(e) => setNewUser({...newUser, lastName:e.target.value})}
-                            required
-                        />
-                    </div>
-                    
-                    <div>
-                        <input 
-                            className='inputss'
-                            type='text'
-                            placeholder='Username'
-                            value={newUser.username}
-                            onChange={(e) => setNewUser({...newUser, username:e.target.value})}
-                            required
-                        />
-                    </div>
-                    
-                    <div>
-                        <input 
-                            className='inputss'
-                            type='email'
-                            placeholder='Email'
-                            value={newUser.email}
-                            onChange={(e) => setNewUser({...newUser, email:e.target.value})}
-                            required
-                        />
-                    </div>
-                    
-                    <div>
-                        <input 
-                            className='inputss'
-                            type='password'
-                            placeholder='Password'
-                            value={newUser.password}
-                            onChange={(e) => setNewUser({...newUser, password:e.target.value})}
-                            required
-                        />
-                    </div>
-                    
-                    <div>
-                        <input
-                            className='inputss' 
-                            type='password'
-                            placeholder='Re-type Password'
-                            value={repass}
-                            onChange={(e) => setRepass(e.target.value)}
-                            required
-                        />
-                    </div>
+                <div className="mb-4">
+                    <input
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        type="text"
+                        placeholder="First Name"
+                        value={newUser.firstName}
+                        onChange={(e) => setNewUser({ ...newUser, firstName: e.target.value })}
+                        required
+                    />
+                </div>
 
-                    <p className='logreg'>Already have an account? <a onClick={(e)=> {e.preventDefault(); navigate("/jerome/userlogin", {replace: true})}} className='toLink cursor-pointer'>Login Here</a></p>
-                    <div className='errorCont'>
-                        {error && <p style={{ color: 'red' }}>{error}</p>}
-                    </div>
-                    
-                    <div className='btnCont'>
-                        <button onClick={handleCreateUser}>Create</button>
-                    </div>
-                    
-                    
-                    
+                <div className="mb-4">
+                    <input
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        type="text"
+                        placeholder="Last Name"
+                        value={newUser.lastName}
+                        onChange={(e) => setNewUser({ ...newUser, lastName: e.target.value })}
+                        required
+                    />
+                </div>
 
+                <div className="mb-4">
+                    <input
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        type="text"
+                        placeholder="Username"
+                        value={newUser.username}
+                        onChange={(e) => setNewUser({ ...newUser, username: e.target.value })}
+                        required
+                    />
+                </div>
+
+                <div className="mb-4">
+                    <input
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        type="email"
+                        placeholder="Email"
+                        value={newUser.email}
+                        onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
+                        required
+                    />
+                </div>
+
+                <div className="mb-4">
+                    <input
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        type="password"
+                        placeholder="Password"
+                        value={newUser.password}
+                        onChange={(e) => setNewUser({ ...newUser, password: e.target.value })}
+                        required
+                    />
+                </div>
+
+                <div className="mb-6">
+                    <input
+                        className="border border-gray-300 rounded-lg w-full p-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                        type="password"
+                        placeholder="Re-type Password"
+                        value={repass}
+                        onChange={(e) => setRepass(e.target.value)}
+                        required
+                    />
+                </div>
+
+                {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
+                <div className="flex justify-center mb-4">
+                    <p className="text-gray-600">
+                        Already have an account? 
+                        <a onClick={(e)=> {e.preventDefault(); navigate("/jerome/userlogin", {replace: true})}} className="cursor-pointer text-blue-600 hover:underline ml-1">Login Here</a>
+                    </p>
+                </div>
+
+                <div>
+                    <button
+                        className="bg-blue-600 text-white py-2 px-4 rounded-lg w-full hover:bg-blue-700 transition duration-200"
+                        onClick={handleCreateUser}
+                    >
+                        Create
+                    </button>
                 </div>
             </div>
+        </main>
         </>
     )
 }

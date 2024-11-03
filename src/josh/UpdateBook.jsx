@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; 
-import { useParams, useLocation } from 'react-router-dom';
-
+import { useNavigate, useParams, useLocation } from 'react-router-dom'; 
 import bgImagee2 from "../steph/AboutPageComponents/bgg.png";
 
 const bgImage2 = {
@@ -16,9 +14,7 @@ const UpdateBook = () => {
 
     const navigate = useNavigate();
     const [books, setBooks] = useState([]);
-    
     const { id } = useParams();
-
     const location = useLocation();
     const [editBook, setEditBook] = useState(location.state?.book || null);
 

@@ -138,9 +138,7 @@ const Author = () => {
                         ))}
                     </div>
                 </div>         
-            </section>
-       
-            
+            </section>       
         </main>
     );
 };

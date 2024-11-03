@@ -29,7 +29,7 @@ const CategorySection = () => {
   const categoryItems = books.map((item) => (
     <Categories
       key={item._id}
-      name={item.category}
+      category={item.category}
       img={item.bookcover}
     />
   ));
