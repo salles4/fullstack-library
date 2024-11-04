@@ -32,13 +32,13 @@ const AboutPage = () => {
     {
       name: "Jerome Bryan Virgo",
       role: "Backend Developer",
-      img: devImage3,
+      img: devImage4,
       description: "full stuck"
     },
     {
       name: "Joshua Victor Imperial",
       role: "Backend Developer",
-      img: devImage4,
+      img: devImage3,
       description: "saling kitkit"
     }
   ];

@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom'
 import { aboutus } from '../../data';
 import bgImagee from "../AboutUsSection/aboutUs2.png";
 
-
-
-
-
-
 const AboutUsSection = () => {
   return(
     <div className='bg-gray-100 min-h-[420px] w-full rounded-b-[150px] ' >
