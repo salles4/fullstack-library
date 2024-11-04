@@ -13,6 +13,19 @@ const Navbar = ({userLoggedIn, handleStorageChange}) => {
   const handleBack = () => {
     navigate(-1); 
   };
+
+
+
+  const searchBtn = () => {
+    if (search === "") {
+      alert("Please have an input in the search bar");
+      return;
+    }
+
+    navigate("/jerome/searchy/" + search);
+    setSearch("");
+  }
+
   return (
     <nav className='static top-0 left-0 w-full text-white bg-red-950'>
      
@@ -53,7 +66,7 @@ const Navbar = ({userLoggedIn, handleStorageChange}) => {
                   value={search}
                   placeholder='Search Books, Categories and Authors.'
                 />
-                <button onClick={()=> navigate("/jerome/searchy/" + search)} className="text-white focus:outline-none font-medium rounded-xl text-sm px-4">Search</button>
+                <button onClick={searchBtn} className="text-white focus:outline-none font-medium rounded-xl text-sm px-4">Search</button>
               </div>
             }
           </div>
