@@ -14,6 +14,7 @@ const bgImage2 = {
 const AddBook = () => {
 
   const navigate = useNavigate();
+  
   const [books, setBooks] = useState([]); 
   const [newBook, setNewBook] = useState({
     booktitle: '', 
@@ -63,6 +64,7 @@ const AddBook = () => {
     axios.post("http://localhost:8000/api/createBooks", newBook)
       .then(() => {
         fetchBooks();
+        alert(`The book "${newBook.booktitle}" has been added successfully`)
         setNewBook({
           booktitle: '', 
           bookdesc: '', 

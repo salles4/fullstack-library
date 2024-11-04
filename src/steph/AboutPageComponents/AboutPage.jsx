@@ -63,13 +63,13 @@ const AboutPage = () => {
               <p className="text-lg opacity-70 mb-5">
                 At ShelfWise, we are passionate about connecting readers with a diverse range of literature. Our online library system is designed to simplify the way you discover, manage, and enjoy books.
               </p>
-              <button className='bg-red-950 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 text-white'>
+              {/* <button className='bg-red-950 px-4 py-2 rounded-full hover:scale-105 duration-200 flex items-center gap-3 text-white'>
                 What's Our Story
                 <svg id="next" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="12" cy="12" r="10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M17 12H7M17 12L13 8M17 12L13 16" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
         </section>

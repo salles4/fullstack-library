@@ -15,6 +15,7 @@ export default function Authors(props){
                 src={props.img} 
                 alt='Book' 
                 className=' mt-5 rounded-xl absolute inset-0 w-full h-full object-contain' 
+          
               />
             </div>
           </div>
